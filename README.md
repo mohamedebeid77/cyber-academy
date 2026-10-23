@@ -24,10 +24,10 @@
 ## The academies
 
 | | Academy | Route | Content | Built on |
-| --- | :--- | :--- | :--- | :--- |
-| 🤖 | **Android Pentesting Academy** | [`/app`](https://mohamedebeid77.github.io/cyber-academy/app/dashboard) | 14 modules · 68 lessons · 8 labs · 8 CTF · 12 diagrams | AOSP & Android developer docs, OWASP MAS, Frida |
-| 🌐 | **Network Security & Pentesting Academy** | [`/network`](https://mohamedebeid77.github.io/cyber-academy/network/dashboard) | 15 modules · 66 lessons · 9 labs · 8 CTF · 36 diagrams | Nmap & Wireshark docs, IETF RFCs, MITRE ATT&CK |
-| 🍎 | **iOS Application Pentesting Academy** | [`/ios`](https://mohamedebeid77.github.io/cyber-academy/ios/dashboard) | 24 modules · 76 lessons · 8 labs · 8 CTF · 34 diagrams · 104-term glossary | Apple Platform Security, Apple Developer docs, OWASP MASVS/MASTG/MASWE |
+| :--- | :--- | :--- | :--- | :--- |
+| ![Android](https://img.shields.io/badge/Android-22e58c?style=flat-square) | **Android Pentesting Academy** | [`/app`](https://mohamedebeid77.github.io/cyber-academy/app/dashboard) | 14 modules · 68 lessons · 8 labs · 8 CTF · 12 diagrams | AOSP & Android developer docs, OWASP MAS, Frida |
+| ![Network](https://img.shields.io/badge/Network-38bdf8?style=flat-square) | **Network Security & Pentesting Academy** | [`/network`](https://mohamedebeid77.github.io/cyber-academy/network/dashboard) | 15 modules · 66 lessons · 9 labs · 8 CTF · 36 diagrams | Nmap & Wireshark docs, IETF RFCs, MITRE ATT&CK |
+| ![iOS](https://img.shields.io/badge/iOS-d6e2f0?style=flat-square) | **iOS Application Pentesting Academy** | [`/ios`](https://mohamedebeid77.github.io/cyber-academy/ios/dashboard) | 24 modules · 76 lessons · 8 labs · 8 CTF · 34 diagrams · 104-term glossary | Apple Platform Security, Apple Developer docs, OWASP MASVS/MASTG/MASWE |
 
 **53 modules · 210 lessons · 25 labs · 24 CTF challenges · 82 original diagrams** — zero backend,
 zero accounts. Progress, notes and XP live in your browser's localStorage, one isolated store per
