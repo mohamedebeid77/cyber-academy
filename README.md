@@ -11,6 +11,15 @@
 </p>
 
 <p align="center">
+  <a href="https://mohamedebeid77.github.io/cyber-academy/">
+    <img src="https://img.shields.io/badge/LAUNCH_THE_PLATFORM-live_demo-22e58c?style=for-the-badge&logo=githubpages&logoColor=white" alt="Launch the platform — live demo" height="34">
+  </a>
+  <br>
+  <a href="https://mohamedebeid77.github.io/cyber-academy/"><strong>mohamedebeid77.github.io/cyber-academy</strong></a>
+  — open it in your browser, no install, no account
+</p>
+
+<p align="center">
   <a href="https://mohamedebeid77.github.io/cyber-academy/"><img src="https://img.shields.io/badge/live_demo-mohamedebeid77.github.io/cyber--academy-22e58c?style=flat-square" alt="Live demo"></a>
   <img src="https://img.shields.io/badge/React_18-20232A?style=flat-square&logo=react&logoColor=61DAFB" alt="React 18">
   <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript">
@@ -46,6 +55,10 @@ boundaries → anti-analysis & bypass evaluation → patching & re-signing → O
 ---
 
 ## Quick start
+
+**No install needed — try it online first:** [mohamedebeid77.github.io/cyber-academy](https://mohamedebeid77.github.io/cyber-academy/)
+
+To run it locally:
 
 ```bash
 git clone https://github.com/mohamedebeid77/cyber-academy.git
