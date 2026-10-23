@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="320" viewBox="0 0 1280 320" role="img" aria-label="Cyber Academy">
+  <defs>
+    <linearGradient id="title" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#22e58c"/>
+      <stop offset="0.55" stop-color="#38bdf8"/>
+      <stop offset="1" stop-color="#4f7cff"/>
+    </linearGradient>
+    <linearGradient id="shield" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#22e58c"/>
+      <stop offset="1" stop-color="#38bdf8"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="320" fill="#04070d"/>
+  <g stroke="#1b2740" stroke-width="1" opacity="0.55">
+    <path d="M0 64H1280M0 128H1280M0 192H1280M0 256H1280"/>
+    <path d="M80 0V320M240 0V320M400 0V320M560 0V320M720 0V320M880 0V320M1040 0V320M1200 0V320"/>
+  </g>
+  <circle cx="1120" cy="70" r="130" fill="#38bdf8" opacity="0.06"/>
+  <circle cx="180" cy="270" r="110" fill="#22e58c" opacity="0.05"/>
+
+  <!-- shield mark -->
+  <g transform="translate(96,88)">
+    <path d="M48 4 88 24v44L48 92 8 68V24z" fill="#0b1220" stroke="url(#shield)" stroke-width="4"/>
+    <path d="M28 44a20 20 0 0 1 40 0v16H28z" fill="url(#shield)"/>
+    <rect x="19" y="24" width="6" height="14" rx="3" fill="url(#shield)" transform="rotate(-25 22 31)"/>
+    <rect x="71" y="24" width="6" height="14" rx="3" fill="url(#shield)" transform="rotate(25 74 31)"/>
+    <circle cx="38" cy="49" r="4" fill="#04070d"/>
+    <circle cx="58" cy="49" r="4" fill="#04070d"/>
+    <rect x="28" y="66" width="40" height="7" rx="3.5" fill="#38bdf8"/>
+  </g>
+
+  <text x="212" y="128" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="64" font-weight="800" fill="#e6edf3" letter-spacing="2">CYBER <tspan fill="url(#title)">ACADEMY</tspan></text>
+  <text x="216" y="168" font-family="Consolas, JetBrains Mono, monospace" font-size="19" fill="#8b98a9">one platform · independent security academies · local-first</text>
+
+  <!-- academy chips -->
+  <g font-family="Consolas, JetBrains Mono, monospace" font-size="17" font-weight="700">
+    <rect x="212" y="204" width="330" height="44" rx="22" fill="#22e58c" opacity="0.1" stroke="#22e58c"/>
+    <circle cx="240" cy="226" r="5" fill="#22e58c"/>
+    <text x="258" y="232" fill="#22e58c">ANDROID PENTESTING</text>
+
+    <rect x="566" y="204" width="330" height="44" rx="22" fill="#38bdf8" opacity="0.1" stroke="#38bdf8"/>
+    <circle cx="594" cy="226" r="5" fill="#38bdf8"/>
+    <text x="612" y="232" fill="#38bdf8">NETWORK SECURITY</text>
+
+    <rect x="920" y="204" width="300" height="44" rx="22" fill="#d6e2f0" opacity="0.08" stroke="#d6e2f0"/>
+    <circle cx="948" cy="226" r="5" fill="#d6e2f0"/>
+    <text x="966" y="232" fill="#d6e2f0">iOS PENTESTING</text>
+  </g>
+
+  <text x="212" y="286" font-family="Consolas, JetBrains Mono, monospace" font-size="15" fill="#5b6b7f">53 modules · 210 lessons · 25 labs · 24 CTF challenges · runs entirely in your browser</text>
+</svg>
