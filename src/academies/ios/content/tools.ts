@@ -7,6 +7,7 @@ import type { Tool } from '../../../types';
 export const tools: Tool[] = [
   {
     id: 'xcode',
+    visual: 'ide',
     name: 'Xcode',
     category: 'Apple toolchain',
     purpose:
@@ -30,6 +31,7 @@ export const tools: Tool[] = [
   },
   {
     id: 'xcrun-devicectl',
+    visual: 'device',
     name: 'xcrun (simctl / devicectl)',
     category: 'Apple toolchain',
     purpose:
@@ -56,6 +58,7 @@ export const tools: Tool[] = [
   },
   {
     id: 'pymobiledevice3',
+    visual: 'device',
     name: 'pymobiledevice3',
     category: 'Device communication',
     purpose:
@@ -81,6 +84,7 @@ export const tools: Tool[] = [
   },
   {
     id: 'libimobiledevice',
+    visual: 'device',
     name: 'libimobiledevice (idevice tools)',
     category: 'Device communication',
     purpose:
@@ -105,6 +109,7 @@ export const tools: Tool[] = [
   },
   {
     id: 'frida',
+    visual: 'terminal',
     name: 'Frida',
     category: 'Runtime instrumentation',
     purpose:
@@ -132,6 +137,7 @@ export const tools: Tool[] = [
   },
   {
     id: 'objection',
+    visual: 'terminal',
     name: 'objection',
     category: 'Runtime instrumentation',
     purpose:
@@ -157,6 +163,7 @@ export const tools: Tool[] = [
   },
   {
     id: 'burp',
+    visual: 'proxy',
     name: 'Burp Suite',
     category: 'Network interception',
     purpose:
@@ -181,6 +188,7 @@ export const tools: Tool[] = [
   },
   {
     id: 'mitmproxy',
+    visual: 'proxy',
     name: 'mitmproxy',
     category: 'Network interception',
     purpose:
@@ -204,6 +212,7 @@ export const tools: Tool[] = [
   },
   {
     id: 'ghidra',
+    visual: 'disassembler',
     name: 'Ghidra',
     category: 'Reverse engineering',
     purpose:
@@ -228,6 +237,7 @@ export const tools: Tool[] = [
   },
   {
     id: 'hopper',
+    visual: 'disassembler',
     name: 'Hopper Disassembler',
     category: 'Reverse engineering',
     purpose:
@@ -250,6 +260,7 @@ export const tools: Tool[] = [
   },
   {
     id: 'lldb',
+    visual: 'debugger',
     name: 'LLDB',
     category: 'Debugging',
     purpose:
@@ -276,6 +287,7 @@ export const tools: Tool[] = [
   },
   {
     id: 'codesign',
+    visual: 'terminal',
     name: 'codesign',
     category: 'Signing / inspection',
     purpose:
@@ -299,6 +311,7 @@ export const tools: Tool[] = [
   },
   {
     id: 'ldid',
+    visual: 'terminal',
     name: 'ldid',
     category: 'Signing / inspection',
     purpose:
@@ -321,6 +334,7 @@ export const tools: Tool[] = [
   },
   {
     id: 'otool-nm-strings',
+    visual: 'terminal',
     name: 'otool / nm / strings',
     category: 'Binary inspection',
     purpose:
@@ -348,6 +362,7 @@ export const tools: Tool[] = [
   },
   {
     id: 'plutil',
+    visual: 'terminal',
     name: 'plutil',
     category: 'Property lists',
     purpose:
@@ -370,6 +385,7 @@ export const tools: Tool[] = [
   },
   {
     id: 'class-dump-tools',
+    visual: 'terminal',
     name: 'class-dump family (dsdump)',
     category: 'Binary inspection',
     purpose:
@@ -391,6 +407,7 @@ export const tools: Tool[] = [
   },
   {
     id: 'rizin',
+    visual: 'disassembler',
     name: 'rizin / radare2',
     category: 'Reverse engineering',
     purpose:

@@ -3,6 +3,7 @@ import { Navigate } from 'react-router-dom';
 import { ArrowLeft, ExternalLink, Wrench } from 'lucide-react';
 import { useAcademy } from '../context/AcademyContext';
 import { Breadcrumb, Card, CopyButton, PageHeader } from '../components/ui';
+import { ToolVisual } from '../components/tools/ToolVisual';
 import { useMergedTools } from './ToolkitPage';
 import { StatusPill } from './ToolkitPage';
 
@@ -30,6 +31,8 @@ export default function ToolDetailPage() {
           </div>
         }
       />
+
+      {tool.visual && <ToolVisual kind={tool.visual} tool={tool} />}
 
       <div className="grid gap-4 lg:grid-cols-3">
         <Card>

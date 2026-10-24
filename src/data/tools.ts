@@ -6,6 +6,7 @@ import type { Tool } from '../types';
 export const tools: Tool[] = [
   {
     id: 'adb',
+    visual: 'device',
     name: 'ADB (Android Debug Bridge)',
     category: 'CLI',
     status: 'current',
@@ -39,6 +40,7 @@ export const tools: Tool[] = [
   },
   {
     id: 'android-studio',
+    visual: 'ide',
     name: 'Android Studio',
     category: 'IDE',
     status: 'current',
@@ -66,6 +68,7 @@ export const tools: Tool[] = [
   },
   {
     id: 'jadx',
+    visual: 'disassembler',
     name: 'JADX',
     category: 'CLI / GUI',
     status: 'current',
@@ -93,6 +96,7 @@ export const tools: Tool[] = [
   },
   {
     id: 'apktool',
+    visual: 'terminal',
     name: 'apktool',
     category: 'CLI',
     status: 'current',
@@ -120,6 +124,7 @@ export const tools: Tool[] = [
   },
   {
     id: 'mobsf',
+    visual: 'report',
     name: 'MobSF',
     category: 'Static/dynamic scanner',
     status: 'current',
@@ -146,6 +151,7 @@ export const tools: Tool[] = [
   },
   {
     id: 'frida',
+    visual: 'terminal',
     name: 'Frida',
     category: 'Instrumentation framework',
     status: 'current',
@@ -174,6 +180,7 @@ export const tools: Tool[] = [
   },
   {
     id: 'objection',
+    visual: 'terminal',
     name: 'Objection',
     category: 'Runtime toolkit',
     status: 'current',
@@ -202,6 +209,7 @@ export const tools: Tool[] = [
   },
   {
     id: 'burp',
+    visual: 'proxy',
     name: 'Burp Suite',
     category: 'Proxy / GUI',
     status: 'current',
@@ -229,6 +237,7 @@ export const tools: Tool[] = [
   },
   {
     id: 'ghidra',
+    visual: 'disassembler',
     name: 'Ghidra',
     category: 'RE suite',
     status: 'current',
@@ -256,6 +265,7 @@ export const tools: Tool[] = [
   },
   {
     id: 'mitmproxy',
+    visual: 'proxy',
     name: 'mitmproxy',
     category: 'CLI proxy',
     status: 'current',
@@ -282,6 +292,7 @@ export const tools: Tool[] = [
   },
   {
     id: 'drozer',
+    visual: 'terminal',
     name: 'Drozer',
     category: 'IPC testing framework',
     status: 'niche',
@@ -309,6 +320,7 @@ export const tools: Tool[] = [
   },
   {
     id: 'radare2',
+    visual: 'disassembler',
     name: 'radare2 / r2',
     category: 'CLI RE',
     status: 'niche',
@@ -336,6 +348,7 @@ export const tools: Tool[] = [
   },
   {
     id: 'apksigner',
+    visual: 'terminal',
     name: 'apksigner (build-tools)',
     category: 'CLI',
     status: 'current',

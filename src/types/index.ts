@@ -251,6 +251,9 @@ export interface Tool {
   purpose: string;
   /** current = actively maintained / first choice, niche = situational, legacy = historical interest. */
   status: 'current' | 'niche' | 'legacy';
+  /** Visual kind rendered on the tool page: terminal | proxy | ide | disassembler |
+   *  debugger | packets | device | scan | tunnel | report (original SVG mock-UIs). */
+  visual?: string;
   install: string;
   usage: string;
   commands: ToolCommand[];

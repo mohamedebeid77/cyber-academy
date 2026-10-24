@@ -8,6 +8,7 @@ import type { Tool } from '../../../types';
 export const tools: Tool[] = [
   {
     id: 'nmap',
+    visual: 'scan',
     name: 'Nmap',
     category: 'Scanning',
     purpose:
@@ -39,6 +40,7 @@ export const tools: Tool[] = [
   },
   {
     id: 'wireshark',
+    visual: 'packets',
     name: 'Wireshark',
     category: 'Packet Analysis',
     purpose:
@@ -69,6 +71,7 @@ export const tools: Tool[] = [
   },
   {
     id: 'tcpdump',
+    visual: 'terminal',
     name: 'tcpdump',
     category: 'Packet Analysis',
     purpose:
@@ -98,6 +101,7 @@ export const tools: Tool[] = [
   },
   {
     id: 'netcat',
+    visual: 'terminal',
     name: 'Netcat (nc)',
     category: 'Networking',
     purpose:
@@ -128,6 +132,7 @@ export const tools: Tool[] = [
   },
   {
     id: 'socat',
+    visual: 'terminal',
     name: 'Socat',
     category: 'Networking',
     purpose:
@@ -155,6 +160,7 @@ export const tools: Tool[] = [
   },
   {
     id: 'dig',
+    visual: 'terminal',
     name: 'dig',
     category: 'Networking',
     purpose:
@@ -185,6 +191,7 @@ export const tools: Tool[] = [
   },
   {
     id: 'nslookup',
+    visual: 'terminal',
     name: 'nslookup',
     category: 'Networking',
     purpose:
@@ -212,6 +219,7 @@ export const tools: Tool[] = [
   },
   {
     id: 'traceroute',
+    visual: 'terminal',
     name: 'traceroute',
     category: 'Networking',
     purpose:
@@ -238,6 +246,7 @@ export const tools: Tool[] = [
   },
   {
     id: 'ping',
+    visual: 'terminal',
     name: 'ping',
     category: 'Networking',
     purpose:
@@ -264,6 +273,7 @@ export const tools: Tool[] = [
   },
   {
     id: 'curl',
+    visual: 'terminal',
     name: 'curl',
     category: 'Web',
     purpose:
@@ -294,6 +304,7 @@ export const tools: Tool[] = [
   },
   {
     id: 'wget',
+    visual: 'terminal',
     name: 'wget',
     category: 'Web',
     purpose:
@@ -321,6 +332,7 @@ export const tools: Tool[] = [
   },
   {
     id: 'netdiscover',
+    visual: 'scan',
     name: 'netdiscover',
     category: 'Scanning',
     purpose:
@@ -347,6 +359,7 @@ export const tools: Tool[] = [
   },
   {
     id: 'arp-scan',
+    visual: 'scan',
     name: 'arp-scan',
     category: 'Scanning',
     purpose:
@@ -373,6 +386,7 @@ export const tools: Tool[] = [
   },
   {
     id: 'enum4linux',
+    visual: 'terminal',
     name: 'enum4linux',
     category: 'Enumeration',
     purpose:
@@ -401,6 +415,7 @@ export const tools: Tool[] = [
   },
   {
     id: 'smbclient',
+    visual: 'terminal',
     name: 'smbclient',
     category: 'Enumeration',
     purpose:
@@ -428,6 +443,7 @@ export const tools: Tool[] = [
   },
   {
     id: 'ldapsearch',
+    visual: 'terminal',
     name: 'ldapsearch',
     category: 'Enumeration',
     purpose:
@@ -456,6 +472,7 @@ export const tools: Tool[] = [
   },
   {
     id: 'responder',
+    visual: 'terminal',
     name: 'Responder',
     category: 'Exploitation Support',
     purpose:
@@ -482,6 +499,7 @@ export const tools: Tool[] = [
   },
   {
     id: 'chisel',
+    visual: 'tunnel',
     name: 'Chisel',
     category: 'Tunneling',
     purpose:
@@ -508,6 +526,7 @@ export const tools: Tool[] = [
   },
   {
     id: 'ligolo-ng',
+    visual: 'tunnel',
     name: 'Ligolo-ng',
     category: 'Tunneling',
     purpose:
@@ -535,6 +554,7 @@ export const tools: Tool[] = [
   },
   {
     id: 'proxychains',
+    visual: 'tunnel',
     name: 'Proxychains',
     category: 'Tunneling',
     purpose:
@@ -561,6 +581,7 @@ export const tools: Tool[] = [
   },
   {
     id: 'searchsploit',
+    visual: 'terminal',
     name: 'Searchsploit',
     category: 'Exploitation Support',
     purpose:
