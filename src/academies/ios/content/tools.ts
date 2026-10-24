@@ -7,6 +7,8 @@ import type { Tool } from '../../../types';
 export const tools: Tool[] = [
   {
     id: 'xcode',
+    image: 'xcode.png',
+    imageCredit: 'Screenshot: HtetPyae via Wikimedia Commons (CC BY-SA 4.0)',
     visual: 'ide',
     name: 'Xcode',
     category: 'Apple toolchain',
@@ -137,6 +139,8 @@ export const tools: Tool[] = [
   },
   {
     id: 'objection',
+    image: 'objection.png',
+    imageCredit: 'objection project — github.com/sensepost/objection',
     visual: 'terminal',
     name: 'objection',
     category: 'Runtime instrumentation',
@@ -163,6 +167,8 @@ export const tools: Tool[] = [
   },
   {
     id: 'burp',
+    image: 'burp.png',
+    imageCredit: 'Screenshot: Mvb71 via Wikimedia Commons (CC BY-SA 4.0)',
     visual: 'proxy',
     name: 'Burp Suite',
     category: 'Network interception',
@@ -188,6 +194,8 @@ export const tools: Tool[] = [
   },
   {
     id: 'mitmproxy',
+    image: 'mitmproxy.png',
+    imageCredit: 'Diagram: mitmproxy documentation — mitmproxy.org',
     visual: 'proxy',
     name: 'mitmproxy',
     category: 'Network interception',
@@ -212,6 +220,8 @@ export const tools: Tool[] = [
   },
   {
     id: 'ghidra',
+    image: 'ghidra.png',
+    imageCredit: 'Screenshot: Philipnelson99 via Wikimedia Commons (CC BY-SA 4.0)',
     visual: 'disassembler',
     name: 'Ghidra',
     category: 'Reverse engineering',
@@ -260,6 +270,8 @@ export const tools: Tool[] = [
   },
   {
     id: 'lldb',
+    image: 'lldb.png',
+    imageCredit: 'Screenshot via Wikimedia Commons (Apache 2.0, LLVM)',
     visual: 'debugger',
     name: 'LLDB',
     category: 'Debugging',

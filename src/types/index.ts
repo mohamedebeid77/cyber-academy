@@ -254,6 +254,10 @@ export interface Tool {
   /** Visual kind rendered on the tool page: terminal | proxy | ide | disassembler |
    *  debugger | packets | device | scan | tunnel | report (original SVG mock-UIs). */
   visual?: string;
+  /** Real screenshot filename in public/tool-images (takes precedence over the SVG visual). */
+  image?: string;
+  /** Attribution line shown under the real screenshot. */
+  imageCredit?: string;
   install: string;
   usage: string;
   commands: ToolCommand[];

@@ -6,6 +6,8 @@ import type { Tool } from '../types';
 export const tools: Tool[] = [
   {
     id: 'adb',
+    image: 'adb.png',
+    imageCredit: 'Screenshot: PhotographyEdits via Wikimedia Commons (CC BY-SA 4.0)',
     visual: 'device',
     name: 'ADB (Android Debug Bridge)',
     category: 'CLI',
@@ -40,6 +42,8 @@ export const tools: Tool[] = [
   },
   {
     id: 'android-studio',
+    image: 'android-studio.png',
+    imageCredit: 'Screenshot: Wikimedia Commons (Apache 2.0) — Android Studio by Google and JetBrains',
     visual: 'ide',
     name: 'Android Studio',
     category: 'IDE',
@@ -68,6 +72,8 @@ export const tools: Tool[] = [
   },
   {
     id: 'jadx',
+    image: 'jadx.png',
+    imageCredit: 'jadx project — github.com/skylot/jadx',
     visual: 'disassembler',
     name: 'JADX',
     category: 'CLI / GUI',
@@ -180,6 +186,8 @@ export const tools: Tool[] = [
   },
   {
     id: 'objection',
+    image: 'objection.png',
+    imageCredit: 'objection project — github.com/sensepost/objection',
     visual: 'terminal',
     name: 'Objection',
     category: 'Runtime toolkit',
@@ -209,6 +217,8 @@ export const tools: Tool[] = [
   },
   {
     id: 'burp',
+    image: 'burp.png',
+    imageCredit: 'Screenshot: Mvb71 via Wikimedia Commons (CC BY-SA 4.0)',
     visual: 'proxy',
     name: 'Burp Suite',
     category: 'Proxy / GUI',
@@ -237,6 +247,8 @@ export const tools: Tool[] = [
   },
   {
     id: 'ghidra',
+    image: 'ghidra.png',
+    imageCredit: 'Screenshot: Philipnelson99 via Wikimedia Commons (CC BY-SA 4.0)',
     visual: 'disassembler',
     name: 'Ghidra',
     category: 'RE suite',
@@ -265,6 +277,8 @@ export const tools: Tool[] = [
   },
   {
     id: 'mitmproxy',
+    image: 'mitmproxy.png',
+    imageCredit: 'Diagram: mitmproxy documentation — mitmproxy.org',
     visual: 'proxy',
     name: 'mitmproxy',
     category: 'CLI proxy',
@@ -320,6 +334,8 @@ export const tools: Tool[] = [
   },
   {
     id: 'radare2',
+    image: 'radare2.png',
+    imageCredit: 'Screenshot: pancake via Wikimedia Commons (LGPL)',
     visual: 'disassembler',
     name: 'radare2 / r2',
     category: 'CLI RE',

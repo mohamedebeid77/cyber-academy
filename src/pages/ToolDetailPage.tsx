@@ -32,7 +32,23 @@ export default function ToolDetailPage() {
         }
       />
 
-      {tool.visual && <ToolVisual kind={tool.visual} tool={tool} />}
+      {tool.image ? (
+        <figure className="my-4">
+          <div className="overflow-hidden rounded-xl border border-line bg-[#050b14]">
+            <img
+              src={import.meta.env.BASE_URL + 'tool-images/' + tool.image}
+              alt={tool.name + ' — interface screenshot'}
+              loading="lazy"
+              className="block w-full"
+            />
+          </div>
+          <figcaption className="mt-1.5 text-center font-mono text-[10px] text-dim">
+            {tool.imageCredit}
+          </figcaption>
+        </figure>
+      ) : (
+        tool.visual && <ToolVisual kind={tool.visual} tool={tool} />
+      )}
 
       <div className="grid gap-4 lg:grid-cols-3">
         <Card>

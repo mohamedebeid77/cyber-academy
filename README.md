@@ -99,7 +99,11 @@ Requires Node.js 18+.
 
 All content is **original**, synthesized from public official sources (OWASP MAS, Apple & Android
 documentation, Nmap/Wireshark manuals, IETF RFCs, MITRE ATT&CK, Frida docs) and attributed per
-lesson. Nothing is copied from any commercial course platform.
+lesson. Nothing is copied from any commercial course platform. Tool pages combine real interface
+screenshots (from [Wikimedia Commons](https://commons.wikimedia.org) under free licenses and
+official project repositories — full list in
+[`public/tool-images/CREDITS.md`](public/tool-images/CREDITS.md)) with original SVG mock-UIs for
+tools that ship no artwork.
 
 ---
 
