@@ -32,7 +32,9 @@ adb devices
 > [!TIP] Optional title
 > Callout text (variants: TIP, INFO, WARN, DANGER, NOTE, LEGAL)
 
-diagram:android-architecture | Optional caption`;
+diagram:android-architecture | Optional caption
+
+image:network/my-screenshot.png | Caption shown under the image | Optional note explaining what to notice`;
 
 export function parseLessonSource(src: string): { blocks: ContentBlock[]; errors: string[] } {
   const blocks: ContentBlock[] = [];
@@ -106,6 +108,21 @@ export function parseLessonSource(src: string): { blocks: ContentBlock[]; errors
       continue;
     }
 
+    if (line.startsWith('image:')) {
+      const rest = line.slice(6);
+      const [rawSrc, ...restParts] = rest.split('|');
+      const src = rawSrc.trim();
+      if (!src) {
+        errors.push('Image line needs a path: image:network/shot.png | caption');
+      } else {
+        const caption = restParts[0]?.trim() || undefined;
+        const note = restParts[1]?.trim() || undefined;
+        blocks.push({ type: 'image', src, alt: caption ?? src, caption, note });
+      }
+      i += 1;
+      continue;
+    }
+
     if (line.startsWith('- ')) {
       const items: string[] = [];
       while (i < lines.length && lines[i].startsWith('- ')) {
@@ -158,6 +175,9 @@ export function serializeBlocks(blocks: ContentBlock[]): string {
         break;
       case 'diagram':
         out.push(`diagram:${b.id}${b.caption ? ' | ' + b.caption : ''}`, '');
+        break;
+      case 'image':
+        out.push(`image:${b.src}${b.caption ? ' | ' + b.caption : ''}${b.note ? ' | ' + b.note : ''}`, '');
         break;
       case 'compare':
         out.push(

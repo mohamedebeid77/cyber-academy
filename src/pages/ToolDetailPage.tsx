@@ -3,6 +3,7 @@ import { Navigate } from 'react-router-dom';
 import { ArrowLeft, ExternalLink, Wrench } from 'lucide-react';
 import { useAcademy } from '../context/AcademyContext';
 import { Breadcrumb, Card, CopyButton, PageHeader } from '../components/ui';
+import { SmartImage } from '../components/content/ContentRenderer';
 import { ToolVisual } from '../components/tools/ToolVisual';
 import { useMergedTools } from './ToolkitPage';
 import { StatusPill } from './ToolkitPage';
@@ -33,19 +34,14 @@ export default function ToolDetailPage() {
       />
 
       {tool.image ? (
-        <figure className="my-4">
-          <div className="overflow-hidden rounded-xl border border-line bg-[#050b14]">
-            <img
-              src={import.meta.env.BASE_URL + 'tool-images/' + tool.image}
-              alt={tool.name + ' — interface screenshot'}
-              loading="lazy"
-              className="block w-full"
-            />
-          </div>
-          <figcaption className="mt-1.5 text-center font-mono text-[10px] text-dim">
-            {tool.imageCredit}
-          </figcaption>
-        </figure>
+        <SmartImage
+          src={tool.image}
+          basePath="tool-images/"
+          alt={tool.name + ' — interface screenshot'}
+          caption={tool.name + ' in action'}
+          credit={tool.imageCredit}
+          sourceUrl={tool.imageSourceUrl}
+        />
       ) : (
         tool.visual && <ToolVisual kind={tool.visual} tool={tool} />
       )}

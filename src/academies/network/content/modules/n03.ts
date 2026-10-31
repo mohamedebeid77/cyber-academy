@@ -378,6 +378,43 @@ export const n03: Module = {
             type: 'p',
             text:
               'Cross-check the two outputs: TTL 122 implies 6 hops from an initial 128, and the trace indeed ends at hop 6 — the numbers agree, which is exactly the habit to build. Hop 5 is silent: a device that forwards but refuses to answer probes. RTTs plateau at about 9 ms from hop 3 onward — the path, not the individual routers, owns the latency.'
+          },
+          {
+            type: 'terminal',
+            title: 'The same session on Windows — real output captured on the author machine',
+            lines: [
+              'C:\\> ping -n 4 example.com',
+              'Pinging example.com [172.66.147.243] with 32 bytes of data:',
+              'Reply from 172.66.147.243: bytes=32 time=49ms TTL=54',
+              'Reply from 172.66.147.243: bytes=32 time=50ms TTL=54',
+              'Reply from 172.66.147.243: bytes=32 time=61ms TTL=54',
+              'Reply from 172.66.147.243: bytes=32 time=51ms TTL=54',
+              'Ping statistics for 172.66.147.243:',
+              '    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss)',
+              'Approximate round trip times in milli-seconds:',
+              '    Minimum = 49ms, Maximum = 61ms, Average = 52ms',
+              '',
+              'C:\\> tracert -d -h 12 example.com',
+              'Tracing route to example.com [172.66.147.243] over a maximum of 12 hops:',
+              '  1     2 ms     8 ms     4 ms  192.168.1.1',
+              '  2    10 ms     9 ms     6 ms  100.94.128.1',
+              '  6     *        *        *     Request timed out.',
+              '  7    60 ms     *        *     149.6.154.130',
+              '  8    87 ms    64 ms    52 ms  162.158.20.57',
+              '  9    53 ms    49 ms    55 ms  172.66.147.243',
+              'Trace complete.',
+              '# TTL 54 here implies 74 hops from an initial 128 — a long real-world path,',
+              '# and hops 6-7 show the classic stars: routers that deprioritize or drop probes'
+            ]
+          },
+          {
+            type: 'image',
+            src: 'network/tracert-windows.png',
+            alt: 'Windows Command Prompt showing the output of tracert www.google.com with a list of hops and round-trip times',
+            caption: 'Windows tracert mapping the path to www.google.com.',
+            note: 'The three columns per hop are three probe attempts — variation between them is normal jitter, and a hop showing all stars simply did not answer (its forwarding can still be perfectly healthy, as the later hops proving). Notice the private-address first hop: the home gateway, exactly where every trace begins.',
+            credit: 'Michel Bakni via Wikimedia Commons (CC BY-SA 4.0)',
+            sourceUrl: 'https://commons.wikimedia.org/wiki/File:Tracert_example.png'
           }
         ],
         example: [
@@ -622,6 +659,29 @@ export const n03: Module = {
             type: 'p',
             text:
               'Read the session: delegation records (NS) with long TTLs, a mail exchanger list with priority ordering, a working reverse zone, and a web server that enforces HTTPS with a 301 plus HSTS — modern baseline confirmed in six commands. Exact values change over time; the format and the reading habit are the lesson.'
+          },
+          {
+            type: 'terminal',
+            title: 'nslookup on Windows — real output captured on the author machine',
+            lines: [
+              'C:\\> nslookup -type=A example.com',
+              'Non-authoritative answer:',
+              'Server:  UnKnown',
+              'Address:  fe80::1',
+              '',
+              'Name:    example.com',
+              'Addresses:  104.20.23.154',
+              '\t  172.66.147.243',
+              '',
+              'C:\\> nslookup -type=MX gmail.com',
+              'Non-authoritative answer:',
+              'gmail.com  MX preference = 5, mail exchanger = gmail-smtp-in.l.google.com',
+              'gmail.com  MX preference = 10, mail exchanger = alt1.gmail-smtp-in.l.google.com',
+              'gmail.com  MX preference = 20, mail exchanger = alt2.gmail-smtp-in.l.google.com',
+              'gmail.com  MX preference = 30, mail exchanger = alt3.gmail-smtp-in.l.google.com',
+              '# "Non-authoritative" = the answer came from a resolver cache, not the zone owner;',
+              '# two A records = the name fronts more than one address (here: a CDN edge)'
+            ]
           }
         ],
         example: [

@@ -110,7 +110,22 @@ export type ContentBlock =
   | { type: 'callout'; variant: CalloutVariant; title?: string; text: string }
   | { type: 'table'; headers: string[]; rows: string[][] }
   | { type: 'diagram'; id: DiagramId; caption?: string }
-  | { type: 'compare'; title?: string; beforeTitle: string; beforeCode: string; afterTitle: string; afterCode: string };
+  | { type: 'compare'; title?: string; beforeTitle: string; beforeCode: string; afterTitle: string; afterCode: string }
+  | {
+      type: 'image';
+      /** Path under public/lesson-images/ (e.g. "network/wireshark-dns.png") or a full https:// URL. */
+      src: string;
+      /** Descriptive alt text (required for accessibility). */
+      alt: string;
+      /** Short caption shown under the image. */
+      caption?: string;
+      /** Longer note explaining what to notice in the image. */
+      note?: string;
+      /** Attribution line, e.g. "Wikimedia Commons, CC BY-SA 4.0". */
+      credit?: string;
+      /** Link to the source page of the image. */
+      sourceUrl?: string;
+    };
 
 export type SectionKey =
   | 'idea'
@@ -258,6 +273,8 @@ export interface Tool {
   image?: string;
   /** Attribution line shown under the real screenshot. */
   imageCredit?: string;
+  /** Optional link to the source page of the screenshot. */
+  imageSourceUrl?: string;
   install: string;
   usage: string;
   commands: ToolCommand[];

@@ -9,7 +9,10 @@ export const tools: Tool[] = [
   {
     id: 'nmap',
     image: 'nmap.png',
+
     imageCredit: 'Screenshot: Mrshaxas via Wikimedia Commons (CC0)',
+
+    imageSourceUrl: 'https://commons.wikimedia.org/wiki/File:Nmap_screenshot(1).png',
     visual: 'scan',
     name: 'Nmap',
     category: 'Scanning',
@@ -43,7 +46,10 @@ export const tools: Tool[] = [
   {
     id: 'wireshark',
     image: 'wireshark.png',
-    imageCredit: 'Screenshot: SF007 via Wikimedia Commons (GPL)',
+
+    imageCredit: 'Wireshark 3.6 dark theme — VulcanSphere via Wikimedia Commons (GPL)',
+
+    imageSourceUrl: 'https://commons.wikimedia.org/wiki/File:Wireshark_3.6_screenshot.png',
     visual: 'packets',
     name: 'Wireshark',
     category: 'Packet Analysis',
@@ -75,8 +81,6 @@ export const tools: Tool[] = [
   },
   {
     id: 'tcpdump',
-    image: 'tcpdump.png',
-    imageCredit: 'Screenshot via Wikimedia Commons (BSD license)',
     visual: 'terminal',
     name: 'tcpdump',
     category: 'Packet Analysis',
@@ -107,8 +111,6 @@ export const tools: Tool[] = [
   },
   {
     id: 'netcat',
-    image: 'netcat.png',
-    imageCredit: 'Screenshot: Interiot via Wikimedia Commons (GPL)',
     visual: 'terminal',
     name: 'Netcat (nc)',
     category: 'Networking',
@@ -228,7 +230,10 @@ export const tools: Tool[] = [
   {
     id: 'traceroute',
     image: 'traceroute.png',
-    imageCredit: 'Screenshot via Wikimedia Commons (GPL)',
+
+    imageCredit: 'Windows tracert output — Michel Bakni via Wikimedia Commons (CC BY-SA 4.0)',
+
+    imageSourceUrl: 'https://commons.wikimedia.org/wiki/File:Tracert_example.png',
     visual: 'terminal',
     name: 'traceroute',
     category: 'Networking',
@@ -256,8 +261,6 @@ export const tools: Tool[] = [
   },
   {
     id: 'ping',
-    image: 'ping.png',
-    imageCredit: 'Screenshot: Tschaefer via Wikimedia Commons (CC0)',
     visual: 'terminal',
     name: 'ping',
     category: 'Networking',
@@ -285,8 +288,6 @@ export const tools: Tool[] = [
   },
   {
     id: 'curl',
-    image: 'curl.png',
-    imageCredit: 'Screenshot: Attys via Wikimedia Commons (CC BY-SA 3.0)',
     visual: 'terminal',
     name: 'curl',
     category: 'Web',
@@ -541,7 +542,10 @@ export const tools: Tool[] = [
   {
     id: 'ligolo-ng',
     image: 'ligolo-ng.png',
-    imageCredit: 'ligolo-ng project — github.com/nicocha30/ligolo-ng',
+
+    imageCredit: 'ligolo-ng web UI — official repo (GPL-3.0)',
+
+    imageSourceUrl: 'https://github.com/nicocha30/ligolo-ng',
     visual: 'tunnel',
     name: 'Ligolo-ng',
     category: 'Tunneling',

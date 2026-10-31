@@ -7,7 +7,10 @@ export const tools: Tool[] = [
   {
     id: 'adb',
     image: 'adb.png',
-    imageCredit: 'Screenshot: PhotographyEdits via Wikimedia Commons (CC BY-SA 4.0)',
+
+    imageCredit: 'adb session in GNOME Terminal — PhotographyEdits via Wikimedia Commons (CC BY-SA 4.0)',
+
+    imageSourceUrl: 'https://commons.wikimedia.org/wiki/File:Android_Debug_Bridge_in_GNOME_terminal.png',
     visual: 'device',
     name: 'ADB (Android Debug Bridge)',
     category: 'CLI',
@@ -43,7 +46,10 @@ export const tools: Tool[] = [
   {
     id: 'android-studio',
     image: 'android-studio.png',
-    imageCredit: 'Screenshot: Wikimedia Commons (Apache 2.0) — Android Studio by Google and JetBrains',
+
+    imageCredit: 'Android Studio Giraffe — Google LLC via Wikimedia Commons (CC BY 2.5)',
+
+    imageSourceUrl: 'https://commons.wikimedia.org/wiki/File:Android_Studio_Giraffe_(2022.3.1)_screenshot.png',
     visual: 'ide',
     name: 'Android Studio',
     category: 'IDE',
@@ -73,7 +79,10 @@ export const tools: Tool[] = [
   {
     id: 'jadx',
     image: 'jadx.png',
-    imageCredit: 'jadx project — github.com/skylot/jadx',
+
+    imageCredit: 'jadx-gui decompiling an app — jadx project (Apache-2.0)',
+
+    imageSourceUrl: 'https://github.com/skylot/jadx',
     visual: 'disassembler',
     name: 'JADX',
     category: 'CLI / GUI',
@@ -186,8 +195,6 @@ export const tools: Tool[] = [
   },
   {
     id: 'objection',
-    image: 'objection.png',
-    imageCredit: 'objection project — github.com/sensepost/objection',
     visual: 'terminal',
     name: 'Objection',
     category: 'Runtime toolkit',
@@ -218,7 +225,10 @@ export const tools: Tool[] = [
   {
     id: 'burp',
     image: 'burp.png',
-    imageCredit: 'Screenshot: Mvb71 via Wikimedia Commons (CC BY-SA 4.0)',
+
+    imageCredit: 'Burp Suite Pro: Proxy HTTP history — PortSwigger official documentation',
+
+    imageSourceUrl: 'https://portswigger.net/burp/documentation/desktop/getting-started/intercepting-http-traffic',
     visual: 'proxy',
     name: 'Burp Suite',
     category: 'Proxy / GUI',
@@ -248,7 +258,10 @@ export const tools: Tool[] = [
   {
     id: 'ghidra',
     image: 'ghidra.png',
-    imageCredit: 'Screenshot: Philipnelson99 via Wikimedia Commons (CC BY-SA 4.0)',
+
+    imageCredit: 'Ghidra CodeBrowser — Philipnelson99 via Wikimedia Commons (CC BY-SA 4.0)',
+
+    imageSourceUrl: 'https://commons.wikimedia.org/wiki/File:Ghidra-disassembly,March_2019.png',
     visual: 'disassembler',
     name: 'Ghidra',
     category: 'RE suite',
@@ -278,7 +291,10 @@ export const tools: Tool[] = [
   {
     id: 'mitmproxy',
     image: 'mitmproxy.png',
-    imageCredit: 'Diagram: mitmproxy documentation — mitmproxy.org',
+
+    imageCredit: 'mitmproxy TUI — official screenshot, mitmproxy.org (GPL-3.0)',
+
+    imageSourceUrl: 'https://mitmproxy.org/',
     visual: 'proxy',
     name: 'mitmproxy',
     category: 'CLI proxy',
@@ -335,7 +351,10 @@ export const tools: Tool[] = [
   {
     id: 'radare2',
     image: 'radare2.png',
-    imageCredit: 'Screenshot: pancake via Wikimedia Commons (LGPL)',
+
+    imageCredit: 'radare2 web UI — pancake via Wikimedia Commons (LGPL)',
+
+    imageSourceUrl: 'https://commons.wikimedia.org/wiki/File:Radare2_webui.png',
     visual: 'disassembler',
     name: 'radare2 / r2',
     category: 'CLI RE',

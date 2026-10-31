@@ -856,6 +856,25 @@ export const n01: Module = {
             type: 'p',
             text:
               'The ping forced a fresh ARP exchange, and the new entry shows REACHABLE before decaying to STALE over time. Look up the OUI prefixes (84:16:f9, d8:3a:dd) in Wireshark\u2019s vendor resolution or the IEEE registry to name the hardware makers — the same lookup you will do instinctively during internal tests.'
+          },
+          {
+            type: 'terminal',
+            title: 'arp -a on Windows — real output from the author machine',
+            lines: [
+              'C:\\> arp -a',
+              '',
+              'Interface: 192.168.56.1 --- 0xd',
+              '  Internet Address      Physical Address      Type',
+              '  192.168.56.255        ff-ff-ff-ff-ff-ff     static',
+              '  224.0.0.251           01-00-5e-00-00-fb     static',
+              '',
+              'Interface: 192.168.1.17 --- 0x17',
+              '  Internet Address      Physical Address      Type',
+              '  192.168.1.1           88-69-3d-96-dc-5a     dynamic',
+              '# static entries: broadcast and multicast mappings the OS preloads',
+              '# dynamic: the gateway at 192.168.1.1, learned via a real ARP exchange',
+              '# ff-ff-ff-ff-ff-ff is the broadcast MAC every ARP request travels to'
+            ]
           }
         ],
         example: [

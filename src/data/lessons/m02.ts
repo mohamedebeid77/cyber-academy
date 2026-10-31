@@ -96,6 +96,15 @@ export const m02: Module = {
         ],
         technical: [
           {
+            type: 'image',
+            src: 'android/android-studio-giraffe.png',
+            alt: 'Android Studio Giraffe open on a Kotlin project with the Layout Inspector showing a running app',
+            caption: 'Android Studio (Giraffe) with the IDE, code editor and Layout Inspector on a live app.',
+            note: 'The pieces that matter for testing: the project tree (left) is where you will open AndroidManifest.xml and resources after importing a decoded app; the editor is where SDK tool paths live in Settings; and the device selector in the toolbar is how you pick which emulator or connected device commands run against. The Layout Inspector on the right is optional, but it shows how the IDE can see inside a debuggable app — the same privilege adb gives you from the shell.',
+            credit: 'Google LLC via Wikimedia Commons (CC BY 2.5)',
+            sourceUrl: 'https://commons.wikimedia.org/wiki/File:Android_Studio_Giraffe_(2022.3.1)_screenshot.png'
+          },
+          {
             type: 'h',
             text: 'SDK components'
           },
@@ -589,6 +598,15 @@ export const m02: Module = {
             type: 'p',
             text:
               'With an emulator and a physical device both attached, every command needs -s <serial> (or -e for the only emulator, -d for the only USB device). Device states you will see in adb devices: device (ready), unauthorized (the RSA consent prompt is waiting on the device), offline (stale adbd state, usually after a reboot), plus boot modes like recovery and bootloader that adb itself cannot talk to (fastboot territory).'
+          },
+          {
+            type: 'image',
+            src: 'android/adb-rsa-prompt.png',
+            alt: 'Android device screen showing the Allow USB debugging RSA fingerprint authorization dialog',
+            caption: 'The RSA fingerprint consent dialog every new host must be approved on.',
+            note: 'This prompt is the device-side half of the pairing the lesson describes: adbd refuses shell access until someone physically accepts the host key fingerprint shown here. The unauthorized state you will keep seeing in adb devices is exactly this dialog waiting unanswered. Checking the fingerprint (not just tapping OK) is the habit that stops you from pairing your test phone to the wrong workstation.',
+            credit: 'PhotographyEdits via Wikimedia Commons (CC BY-SA 4.0)',
+            sourceUrl: 'https://commons.wikimedia.org/wiki/File:Android_Debug_Bridge_RSA_key_fingerprint.png'
           }
         ],
         pentestRelevance: [
@@ -802,6 +820,24 @@ export const m02: Module = {
             type: 'p',
             text:
               'Intercept shows and holds requests/responses in flight (Forward, Drop, Edit); HTTP history records everything that passed, filterable after the fact; Match and Replace rewrites traffic automatically — useful to add headers or normalize responses while testing. For mobile work, history is the primary evidence surface: every API call the app made, in order, with tokens and parameters.'
+          },
+          {
+            type: 'image',
+            src: 'shared/burp-intercept.png',
+            alt: 'Burp Suite Proxy Intercept tab holding an intercepted GET request to portswigger.net with Intercept on, Forward and Drop buttons visible',
+            caption: 'Proxy Intercept holding a request in flight — the pause button of web traffic.',
+            note: 'This is Burp\u2019s current unified interface: the Intercept toggle at top-left is live, the held request appears below with its raw headers editable in place, and Forward releases it to the server (Drop kills it). When you point an app at this proxy, every request the app makes stops here first — edit a token, a parameter, or a path, then watch what the backend does with your mutation.',
+            credit: 'PortSwigger official documentation',
+            sourceUrl: 'https://portswigger.net/burp/documentation/desktop/getting-started/intercepting-http-traffic'
+          },
+          {
+            type: 'image',
+            src: 'shared/burp-http-history.png',
+            alt: 'Burp Suite Proxy HTTP history tab listing captured requests with columns for host, method, URL, params and status',
+            caption: 'Proxy HTTP history: the full record of what an app actually sent.',
+            note: 'History is where mobile findings come from: every API endpoint the app called, in order, with parameters and response codes. The columns matter — Params flags requests carrying user-controlled values, and the status column separates success from the 401s and 500s worth investigating. Filter above the table narrows thousands of rows to one host or one file extension.',
+            credit: 'PortSwigger official documentation',
+            sourceUrl: 'https://portswigger.net/burp/documentation/desktop/getting-started/intercepting-http-traffic'
           },
           {
             type: 'h',

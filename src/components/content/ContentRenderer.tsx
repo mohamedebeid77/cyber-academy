@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import {
   Info,
   Lightbulb,
   AlertTriangle,
   ShieldAlert,
   StickyNote,
-  Scale
+  Scale,
+  ImageOff,
+  Maximize2,
+  X
 } from 'lucide-react';
 import type { CalloutVariant, ContentBlock, SectionKey } from '../../types';
 import { SECTION_META } from '../../types';
@@ -95,6 +99,150 @@ function Callout({ variant, title, text }: { variant: CalloutVariant; title?: st
 }
 
 // ---------------------------------------------------------------------------
+// Image figure (real screenshots inside lessons)
+// ---------------------------------------------------------------------------
+
+type ImageBlock = Extract<ContentBlock, { type: 'image' }>;
+
+/** Real-image figure with lazy loading, graceful fallback and a lightbox.
+ *  src is a file under public/<basePath> (default lesson-images/) or a full https URL. */
+export function SmartImage({
+  src,
+  alt,
+  caption,
+  note,
+  credit,
+  sourceUrl,
+  basePath = 'lesson-images/'
+}: {
+  src: string;
+  alt: string;
+  caption?: string;
+  note?: string;
+  credit?: string;
+  sourceUrl?: string;
+  basePath?: string;
+}) {
+  const [zoom, setZoom] = useState(false);
+  const [failed, setFailed] = useState(false);
+  const openRef = useRef<HTMLButtonElement | null>(null);
+  const closeRef = useRef<HTMLButtonElement | null>(null);
+
+  const url = /^https?:\/\//.test(src) ? src : import.meta.env.BASE_URL + basePath + src;
+
+  useEffect(() => {
+    if (!zoom) return;
+    const handler = (e: KeyboardEvent) => e.key === 'Escape' && setZoom(false);
+    window.addEventListener('keydown', handler);
+    closeRef.current?.focus();
+    document.body.style.overflow = 'hidden';
+    return () => {
+      window.removeEventListener('keydown', handler);
+      document.body.style.overflow = '';
+      openRef.current?.focus();
+    };
+  }, [zoom]);
+
+  return (
+    <figure className="my-5">
+      <div className="group relative overflow-hidden rounded-lg border border-line bg-[#050a12]">
+        {failed ? (
+          <div className="flex flex-col items-center gap-2 px-4 py-10 text-center">
+            <ImageOff size={20} className="text-dim" />
+            <span className="font-mono text-[11px] text-dim">Image unavailable — {alt}</span>
+          </div>
+        ) : (
+          <button
+            ref={openRef}
+            type="button"
+            className="block w-full cursor-zoom-in"
+            onClick={() => setZoom(true)}
+            aria-label={'Enlarge image: ' + alt}
+          >
+            <img
+              src={url}
+              alt={alt}
+              loading="lazy"
+              decoding="async"
+              onError={() => setFailed(true)}
+              className="mx-auto block max-h-[540px] w-auto max-w-full"
+            />
+            <span className="pointer-events-none absolute right-2 top-2 flex items-center gap-1 rounded-md border border-line bg-base2/85 px-2 py-1 font-mono text-[10px] text-dim opacity-0 transition-opacity group-hover:opacity-100">
+              <Maximize2 size={11} /> enlarge
+            </span>
+          </button>
+        )}
+      </div>
+      {caption && (
+        <figcaption className="mt-2 text-center font-mono text-[11px] leading-relaxed text-dim">
+          {caption}
+        </figcaption>
+      )}
+      {note && <p className="mt-1.5 text-[13.5px] leading-relaxed text-muted">{note}</p>}
+      {(credit || sourceUrl) && (
+        <div className="mt-1 text-center font-mono text-[10px] text-dim/70">
+          {credit}
+          {sourceUrl && (
+            <>
+              {' · '}
+              <a href={sourceUrl} target="_blank" rel="noreferrer" className="underline decoration-dotted hover:text-muted">
+                source
+              </a>
+            </>
+          )}
+        </div>
+      )}
+
+      {zoom && !failed && createPortal(
+        <div
+          className="fixed inset-0 z-[70] flex flex-col items-center justify-center bg-black/85 p-4 backdrop-blur-sm"
+          role="dialog"
+          aria-modal="true"
+          aria-label={caption ?? alt}
+          onClick={() => setZoom(false)}
+        >
+          <button
+            ref={closeRef}
+            type="button"
+            className="absolute right-4 top-4 rounded-md border border-white/15 bg-white/10 p-2 text-white/80 hover:bg-white/20 hover:text-white"
+            onClick={() => setZoom(false)}
+            aria-label="Close enlarged image"
+          >
+            <X size={18} />
+          </button>
+          <img
+            src={url}
+            alt={alt}
+            className="max-h-[82vh] max-w-[94vw] rounded-lg object-contain"
+            onClick={(e) => e.stopPropagation()}
+          />
+          {(caption || credit) && (
+            <div className="mt-3 max-w-[80vw] text-center">
+              {caption && <div className="font-mono text-xs text-white/80">{caption}</div>}
+              {credit && <div className="mt-0.5 font-mono text-[10px] text-white/45">{credit}</div>}
+            </div>
+          )}
+        </div>,
+        document.body
+      )}
+    </figure>
+  );
+}
+
+function ImageFigure({ block }: { block: ImageBlock }) {
+  return (
+    <SmartImage
+      src={block.src}
+      alt={block.alt}
+      caption={block.caption}
+      note={block.note}
+      credit={block.credit}
+      sourceUrl={block.sourceUrl}
+    />
+  );
+}
+
+// ---------------------------------------------------------------------------
 // Block renderer
 // ---------------------------------------------------------------------------
 
@@ -156,6 +304,8 @@ export function BlockView({ block }: { block: ContentBlock }) {
           {block.caption && <figcaption className="mt-2 text-center font-mono text-[11px] text-dim">{block.caption}</figcaption>}
         </figure>
       );
+    case 'image':
+      return <ImageFigure block={block} />;
     case 'compare':
       return (
         <div className="my-5">

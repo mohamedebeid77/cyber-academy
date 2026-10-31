@@ -767,6 +767,24 @@ export const n02: Module = {
               'DNS is a hierarchy with caching at every level. Your stub resolver (the OS) asks a recursive resolver (your ISP\u2019s, or 8.8.8.8/1.1.1.1, or a local systemd-resolved stub). On a cache miss the recursive walks the hierarchy: the root servers refer it to the TLD servers (.org), the TLD refers it to the domain\u2019s authoritative servers, and those return the final record. Every answer carries a TTL that bounds how long it may be cached, and negative answers (NXDOMAIN) are cached too. Queries normally ride UDP 53; TCP 53 takes over for truncated responses, zone transfers and larger payloads.'
           },
           {
+            type: 'image',
+            src: 'network/wireshark-dns-detail.png',
+            alt: 'Wireshark packet detail pane fully expanded on a DNS query, showing frame, Ethernet II, IP, UDP and Domain Name System layers',
+            caption: 'One DNS query, decoded layer by layer in the detail pane.',
+            note: 'This is encapsulation made visible: Ethernet II (L2) carries IPv4 (L3), which carries UDP (L4), which carries the DNS query (application layer). Expanding each node in this tree is how you verify every field described in this lesson — ports 53 live in the UDP node, the queried name and record type in the DNS node.',
+            credit: 'Laurachappell via Wikimedia Commons (CC BY-SA 4.0)',
+            sourceUrl: 'https://commons.wikimedia.org/wiki/File:Wireshark_Network_Analyzer_Screen.png'
+          },
+          {
+            type: 'image',
+            src: 'network/dns-ttl-detail.png',
+            alt: 'Wireshark showing the TTL field of a DNS answer for www.google.com highlighted in the packet detail pane',
+            caption: 'The TTL field inside a real DNS answer for www.google.com.',
+            note: 'Notice this is the record\u2019s Time to Live — how many seconds a resolver may cache this answer — which is different from the IP header TTL that limits hop count. Record TTLs matter to testers twice: short TTLs signal failover or CDN infrastructure during recon, and attackers abuse long TTLs to keep poisoned cache entries alive.',
+            credit: 'Syced via Wikimedia Commons (CC0)',
+            sourceUrl: 'https://commons.wikimedia.org/wiki/File:TTL_of_a_DNS_answer_resolving_google.com,_seen_in_Ubuntu_Linux_Wireshark.png'
+          },
+          {
             type: 'list',
             items: [
               'A / AAAA — host address (IPv4 / IPv6)',

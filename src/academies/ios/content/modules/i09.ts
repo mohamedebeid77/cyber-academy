@@ -459,6 +459,15 @@ export const i09: Module = {
         technical: [
           { type: 'h', text: 'Session setup' },
           {
+            type: 'image',
+            src: 'ios/ghidra-decompiler.png',
+            alt: 'Ghidra CodeBrowser with the binary listing in the center and the decompiler window showing recovered pseudo-C on the right',
+            caption: 'Ghidra CodeBrowser: listing (center) and decompiler output (right) side by side.',
+            note: 'The three-pane discipline of this lesson, in one frame: the Symbol Tree (left) is where you land from your i09-l02 target list; the center listing is raw disassembly — the ground truth you confirm conclusions against; the right pane is the decompiled pseudo-C that makes the function readable. The workflow runs right-to-center: read the pseudo-C, verify the decisive line in the listing, then follow cross-references outward.',
+            credit: 'Philipnelson99 via Wikimedia Commons (CC BY-SA 4.0)',
+            sourceUrl: 'https://commons.wikimedia.org/wiki/File:Ghidra-disassembly,March_2019.png'
+          },
+          {
             type: 'list',
             items: [
               'Import the (extracted, correct-slice) binary into a Ghidra project; let the initial analysis run (auto-analysis covers ARM64 by default)',

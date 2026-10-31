@@ -1302,6 +1302,34 @@ export const m01: Module = {
             ]
           },
           {
+            type: 'terminal',
+            title: 'adb on a physical device — real session from a Linux host',
+            lines: [
+              '[user@host ~]$ adb devices',
+              '* daemon not running; starting now at tcp:5037',
+              '* daemon started successfully',
+              'List of devices attached',
+              '1e778e25\tunauthorized',
+              '[user@host ~]$ adb devices',
+              'List of devices attached',
+              '1e778e25\tdevice',
+              '[user@host ~]$ adb shell',
+              'OnePlus5:/ $ uname -a',
+              'Linux localhost 4.4.21-perf+ #1 SMP PREEMPT Fri May 26 16:25:14 CST 2017 aarch64',
+              '# first call starts the daemon; then the device answers unauthorized until',
+              '# the RSA prompt on its screen is accepted; aarch64 = ARM64 device'
+            ]
+          },
+          {
+            type: 'image',
+            src: 'android/adb-gnome.png',
+            alt: 'GNOME Terminal showing an adb session: daemon start, device state transitions from unauthorized to device, and an adb shell uname -a',
+            caption: 'A real adb session: daemon startup, authorization, then a shell on the device.',
+            note: 'Match these lines to the health check above — the same verbs against a physical device instead of an emulator. The unauthorized-to-device transition is the RSA consent flow; aarch64 confirms an ARM64 device, which matters later when you pick Frida server binaries.',
+            credit: 'PhotographyEdits via Wikimedia Commons (CC BY-SA 4.0)',
+            sourceUrl: 'https://commons.wikimedia.org/wiki/File:Android_Debug_Bridge_in_GNOME_terminal.png'
+          },
+          {
             type: 'callout',
             variant: 'tip',
             title: 'Filter early, filter often',

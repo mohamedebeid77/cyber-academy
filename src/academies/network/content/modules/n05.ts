@@ -813,6 +813,15 @@ export const n05: Module = {
               'Version detection (-sV) works through nmap-service-probes: a database of probe payloads and match expressions. Nmap first waits for any banner the service sends on connect (many services greet immediately), then sends the probe signatures appropriate for that port, matching responses against regular expressions to extract product, version, CPE, and sometimes hostname or OS details. The --version-intensity 0-9 knob (default 7) controls how many probes get tried; --version-light is intensity 2 (fast, common probes) and --version-all is 9. Heavier intensity finds more, slower, and shakes more logs.'
           },
           {
+            type: 'image',
+            src: 'network/nmap-scan.png',
+            alt: 'nmap scan output in a dark terminal showing open ports 22 and 80 on scanme.nmap.org with service and version details',
+            caption: 'A real nmap result against scanme.nmap.org — the Nmap project\u2019s official practice target.',
+            note: 'The PORT table is the deliverable: state (open, filtered), the service name per port, and — when -sV ran — the product and version behind it. Every row here is a candidate finding: an exposed SSH version and a web server are exactly the leads that turn a scan into a targeted assessment.',
+            credit: 'Mrshaxas via Wikimedia Commons (CC0)',
+            sourceUrl: 'https://commons.wikimedia.org/wiki/File:Nmap_screenshot(1).png'
+          },
+          {
             type: 'p',
             text:
               'OS detection (-O) is TCP/IP stack fingerprinting: nmap sends a series of crafted probes (unusual TCP option combinations, ECN, null-flag packets, UDP to a closed port, ICMP) and compares the target\u2019s responses against the nmap-os-db signature database. It needs at least one open and one closed TCP port to work well; --osscan-limit skips hosts that cannot produce a real fingerprint and --osscan-guess forces nmap to print its best guess when no signature matches cleanly. Always read OS output as "high/low confidence guess", never fact. The -A flag bundles aggressive mode: version detection, OS detection, default scripts and traceroute in one convenient (and loud) package.'

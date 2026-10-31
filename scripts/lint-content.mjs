@@ -5,6 +5,7 @@ import { readFileSync, readdirSync, existsSync } from 'fs';
 import { join } from 'path';
 
 const SRC = new URL('../src/', import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, '$1');
+const ROOT = new URL('../', import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, '$1');
 const SECTION_KEYS = ['idea:', 'technical:', 'pentestRelevance:', 'lookFor:', 'howToTest:', 'example:', 'tools:', 'mistakes:', 'tryIt:', 'takeaways:'];
 
 const ANDROID_DIAGRAMS = new Set([
@@ -72,6 +73,19 @@ function lintAcademy({ label, modulesDir, moduleFileRe, lessonIdRe, validDiagram
     }
     for (const m of src.matchAll(/\{\s*type:\s*'diagram',\s*id:\s*'([a-z-]+)'/g)) {
       if (!validDiagrams.has(m[1])) fail(`invalid diagram id: ${m[1]}`);
+    }
+    for (const m of src.matchAll(/type:\s*'image'/g)) {
+      const tail = src.slice(m.index, m.index + 600);
+      const srcM = tail.match(/src:\s*'([^']+)'/);
+      const altM = tail.match(/alt:\s*'([^']*)'/);
+      if (!srcM) fail('image block missing src');
+      else {
+        const s = srcM[1];
+        if (s.includes('..')) fail(`image src must not traverse directories: ${s}`);
+        if (!/^https?:\/\//.test(s) && !existsSync(join(ROOT, 'public', 'lesson-images', s)))
+          fail(`image asset missing: public/lesson-images/${s}`);
+      }
+      if (!altM || !altM[1].trim()) fail(`image block needs descriptive alt text (src: ${srcM?.[1] ?? '?'})`);
     }
     const opens = (src.match(/\{/g) ?? []).length;
     const closes = (src.match(/\}/g) ?? []).length;

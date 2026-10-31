@@ -77,6 +77,15 @@ export const n06: Module = {
               ['Packet detail (middle)', 'Protocol tree for the selected packet, layer by layer', 'Reading exact field values and flags'],
               ['Packet bytes (bottom)', 'Hex and ASCII of the selected packet', 'Verifying payload content and spotting oddities']
             ]
+          },
+          {
+            type: 'image',
+            src: 'network/wireshark-main.png',
+            alt: 'Wireshark 3.6 in dark theme during a live capture on interface wlan0, TLS traffic visible in the packet list',
+            caption: 'Wireshark 3.6 mid-capture on a wireless interface — the three panes in a real session.',
+            note: 'Match the panes to the table: the top list shows one row per packet with the Info column doing the summarizing; the middle tree and bottom hex view describe whichever row you select. The display-filter bar above the list is where you will type expressions like dns or tcp.flags.syn == 1 to narrow thousands of rows to the ones that matter.',
+            credit: 'VulcanSphere via Wikimedia Commons (GPL)',
+            sourceUrl: 'https://commons.wikimedia.org/wiki/File:Wireshark_3.6_screenshot.png'
           }
         ],
         pentestRelevance: [
@@ -300,6 +309,15 @@ export const n06: Module = {
             type: 'p',
             text:
               'The client sends SYN (with its initial sequence number and options: MSS, window scale, SACK-permitted, timestamps). The server answers SYN/ACK with its own ISN. The client completes with ACK. Two packets later, both sides have agreed on starting sequence numbers and capabilities. In a capture, a handshake that never completes is diagnostic gold: SYN with no SYN/ACK means the port is filtered or the service is dead; SYN answered by RST/ACK means nothing listens on that port; repeated SYNs from one host with no completion is the classic port-scan signature.'
+          },
+          {
+            type: 'image',
+            src: 'network/wireshark-handshake.png',
+            alt: 'Wireshark packet list showing a TCP three-way handshake: SYN, SYN+ACK, then ACK between client and server',
+            caption: 'A real capture: the first three packets are the entire three-way handshake.',
+            note: 'Read the Info column: packet 1 is the client SYN, packet 2 the server SYN+ACK, packet 3 the client ACK. Wireshark displays relative sequence numbers (0, 0, 1), which is exactly the byte-counting bookkeeping described above made visible on the wire.',
+            credit: 'Wireshark wiki — TCP 3-way handshaking',
+            sourceUrl: 'https://wiki.wireshark.org/TCP_3_way_handshaking'
           },
           {
             type: 'h',
@@ -840,9 +858,41 @@ export const n06: Module = {
               'DNS (UDP/53 mostly): clients query resolvers; the response carries answers and a response code. Normal: short, varied queries, mostly A/AAAA, low NXDOMAIN rate, internal resolvers doing recursion. Odd: storms of NXDOMAIN (malware iterating random domains — DGA behavior), very long random-looking subdomains (DNS tunneling/exfiltration), heavy TXT or NULL-record use, queries to external resolvers bypassing internal ones, zone transfer (AXFR) attempts, and DNS riding nonstandard ports. Filters: dns.flags.response == 0 (queries), dns.flags.rcode == 3 (NXDOMAIN), dns.qry.name contains "lab".'
           },
           {
+            type: 'image',
+            src: 'network/wireshark-dns-list.png',
+            alt: 'Wireshark dark theme with display filter dns or icmp applied, showing DNS standard queries and responses in the packet list',
+            caption: 'Real DNS traffic under the display filter dns or icmp.',
+            note: 'Each pair is a query (Standard query … A example.com) followed by its response. Notice the pattern you will rely on everywhere: one request, one answer, small payloads, UDP 53. When you later see hundreds of unanswered queries or single hosts hammering unusual record types, you are looking at the anomalies described above.',
+            credit: 'Oluwatobi TJ via Wikimedia Commons (CC0)',
+            sourceUrl: 'https://commons.wikimedia.org/wiki/File:Screenshots_of_the_Wireshark_interface,_showing_captured_packets_data_-_DNS.png'
+          },
+          {
             type: 'p',
             text:
               'HTTP (TCP/80 and friends): request method, URI and headers in cleartext. Normal: GET/POST with sensible headers, standard status codes, one Host header. Odd: Basic authorization headers in the clear (instant credential finding), unusual methods (TRACE, TRACK), URIs full of shell metacharacters (exploitation attempts), server headers leaking exact versions, and credentials or tokens in query strings. Filters: http.request, http.request.method == "POST", http.authorization.'
+          },
+          {
+            type: 'terminal',
+            title: 'A real HTTP request/response pair (curl -v, captured during development)',
+            lines: [
+              '$ curl -v https://example.com',
+              '* Host example.com:443 was resolved.',
+              '* IPv4: 172.66.147.243, 104.20.23.154',
+              '*   Trying 172.66.147.243:443...',
+              '* Established connection to example.com (172.66.147.243 port 443) from 192.168.1.17 port 50711',
+              '> GET / HTTP/1.1',
+              '> Host: example.com',
+              '> User-Agent: curl/8.16.0',
+              '> Accept: */*',
+              '>',
+              '< HTTP/1.1 200 OK',
+              '< Content-Type: text/html; charset=utf-8',
+              '< Server: cloudflare',
+              '< cf-cache-status: HIT',
+              '<',
+              '# request: lines starting with ">" — response: lines starting with "<"',
+              '# this is exactly what Wireshark shows inside the TCP payload of each HTTP packet'
+            ]
           },
           {
             type: 'p',
@@ -853,6 +903,15 @@ export const n06: Module = {
             type: 'p',
             text:
               'ARP (L2, no ports): requests are broadcast, replies unicast. Normal: a few requests per host per minute, occasional gratuitous ARP on boot or NIC change. Odd: two different MAC addresses answering for one IP (duplicate-address detection fires — classic spoofing/conflict signature), gratuitous ARP floods (announcing, poisoning, or a broken NIC), and high-rate broadcast storms. Wireshark marks duplicates in the frame: filter arp.duplicate-address-detected == 1.'
+          },
+          {
+            type: 'image',
+            src: 'network/arp-request.png',
+            alt: 'Wireshark showing an ARP request broadcast with the Address Resolution Protocol detail tree expanded',
+            caption: 'An ARP request on the wire: "Who has 192.168.168.7? Tell 192.168.168.101".',
+            note: 'The detail tree shows the anatomy: an Ethernet II frame broadcast to ff:ff:ff:ff:ff:ff carrying a tiny ARP payload — operation 1 (request), sender IP and MAC, target IP known but target MAC all zeros. The reply inverts this: operation 2, sent unicast, both addresses filled in. Every L2 spoofing attack you will study later is just lying in these fields.',
+            credit: 'Jringoot via Wikimedia Commons (GPL)',
+            sourceUrl: 'https://commons.wikimedia.org/wiki/File:ARP-request.png'
           },
           {
             type: 'p',

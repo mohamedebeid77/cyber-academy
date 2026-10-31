@@ -38,6 +38,15 @@ export const i07: Module = {
           }
         ],
         technical: [
+          {
+            type: 'image',
+            src: 'ios/xcode-26.png',
+            alt: 'Xcode 26 with an iOS app project open: project navigator, Swift source editor and build succeeded banner',
+            caption: 'Xcode with a real iOS app project — the anchor of the macOS workbench.',
+            note: 'What matters for testing, not development: the project navigator (left) exposes every file the app ships — Info.plist, entitlements, assets; the editor is where source-level review of Swift/ObjC happens; the toolbar shows the active scheme and destination (a simulator or a physical device), which drives every xcrun/devicectl command in the terminal blocks below. The Build Succeeded banner is the end state of the code-signing machinery covered in module i06.',
+            credit: 'Wittawin Panta via Wikimedia Commons (CC BY-SA 4.0)',
+            sourceUrl: 'https://commons.wikimedia.org/wiki/File:XCode_Screenshot.png'
+          },
           { type: 'h', text: 'The stack, bottom up' },
           {
             type: 'list',
@@ -537,6 +546,15 @@ export const i07: Module = {
               'Break it on purpose: disable full trust for the CA and observe the app\u2019s failure mode — you are now watching TLS validation behavior, the i14 prelude',
               'Write the environment note: proxy tool/version, CA state, capture file names — the reproducibility triad'
             ]
+          },
+          {
+            type: 'image',
+            src: 'shared/mitmproxy-cli.png',
+            alt: 'mitmproxy terminal UI showing a flows list: intercepted HTTPS requests with methods, URLs, status codes, sizes and timings',
+            caption: 'mitmproxy\u2019s TUI: every intercepted flow, live.',
+            note: 'The alternative proxy, shown here doing exactly what the lesson describes: one row per flow with method, URL, response code, size and timing. Navigation is keyboard-first (up/down to select, Enter to inspect a flow, q to return) — the flows list you see maps one-to-one to Burp\u2019s HTTP history, and either tool satisfies the baseline-capture workflow above. The [*:9999] indicator bottom-right shows the listening port.',
+            credit: 'mitmproxy project (GPL-3.0), official screenshot',
+            sourceUrl: 'https://mitmproxy.org/'
           }
         ],
         example: [

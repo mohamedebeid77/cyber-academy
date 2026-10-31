@@ -8,7 +8,10 @@ export const tools: Tool[] = [
   {
     id: 'xcode',
     image: 'xcode.png',
-    imageCredit: 'Screenshot: HtetPyae via Wikimedia Commons (CC BY-SA 4.0)',
+
+    imageCredit: 'Xcode 26 with an iOS project — Wittawin Panta via Wikimedia Commons (CC BY-SA 4.0)',
+
+    imageSourceUrl: 'https://commons.wikimedia.org/wiki/File:XCode_Screenshot.png',
     visual: 'ide',
     name: 'Xcode',
     category: 'Apple toolchain',
@@ -139,8 +142,6 @@ export const tools: Tool[] = [
   },
   {
     id: 'objection',
-    image: 'objection.png',
-    imageCredit: 'objection project — github.com/sensepost/objection',
     visual: 'terminal',
     name: 'objection',
     category: 'Runtime instrumentation',
@@ -168,7 +169,10 @@ export const tools: Tool[] = [
   {
     id: 'burp',
     image: 'burp.png',
-    imageCredit: 'Screenshot: Mvb71 via Wikimedia Commons (CC BY-SA 4.0)',
+
+    imageCredit: 'Burp Suite Pro: Proxy HTTP history — PortSwigger official documentation',
+
+    imageSourceUrl: 'https://portswigger.net/burp/documentation/desktop/getting-started/intercepting-http-traffic',
     visual: 'proxy',
     name: 'Burp Suite',
     category: 'Network interception',
@@ -195,7 +199,10 @@ export const tools: Tool[] = [
   {
     id: 'mitmproxy',
     image: 'mitmproxy.png',
-    imageCredit: 'Diagram: mitmproxy documentation — mitmproxy.org',
+
+    imageCredit: 'mitmproxy TUI — official screenshot, mitmproxy.org (GPL-3.0)',
+
+    imageSourceUrl: 'https://mitmproxy.org/',
     visual: 'proxy',
     name: 'mitmproxy',
     category: 'Network interception',
@@ -221,7 +228,10 @@ export const tools: Tool[] = [
   {
     id: 'ghidra',
     image: 'ghidra.png',
-    imageCredit: 'Screenshot: Philipnelson99 via Wikimedia Commons (CC BY-SA 4.0)',
+
+    imageCredit: 'Ghidra CodeBrowser — Philipnelson99 via Wikimedia Commons (CC BY-SA 4.0)',
+
+    imageSourceUrl: 'https://commons.wikimedia.org/wiki/File:Ghidra-disassembly,March_2019.png',
     visual: 'disassembler',
     name: 'Ghidra',
     category: 'Reverse engineering',
@@ -270,8 +280,6 @@ export const tools: Tool[] = [
   },
   {
     id: 'lldb',
-    image: 'lldb.png',
-    imageCredit: 'Screenshot via Wikimedia Commons (Apache 2.0, LLVM)',
     visual: 'debugger',
     name: 'LLDB',
     category: 'Debugging',

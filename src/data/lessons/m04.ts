@@ -307,6 +307,15 @@ export const m04: Module = {
               'In jadx-gui, the left tree mirrors package structure; the Resource panel exposes the manifest, strings, and assets; clicking a class cross-links usages. Search (Navigation menu) covers class names, code text, and resources as separate scopes — run all three before concluding something is absent. Save your session so annotated work survives tool restarts.'
           },
           {
+            type: 'image',
+            src: 'android/jadx-gui.png',
+            alt: 'jadx-gui showing a decompiled APK: package tree on the left and decompiled Java source with highlighted intent flag lines on the right',
+            caption: 'jadx-gui mid-analysis: decompiled Java from a real APK, searchable and cross-linked.',
+            note: 'What you are looking at: the left tree is the decompiled package structure (obfuscated class names still visible), the editor shows the recovered Java with jadx\u2019s own highlighting, and the Code/Smali toggle at the bottom flips between Java and bytecode views. The highlighted lines show intent-flag manipulation — exactly the kind of line a pentester stops on and traces. Notice the Issues counter: decompilers never recover everything, and 1,364 warnings means most classes did decompile but some need the --show-bad-code fallback.',
+            credit: 'jadx project (Apache-2.0)',
+            sourceUrl: 'https://github.com/skylot/jadx'
+          },
+          {
             type: 'h',
             text: 'Deobfuscation limits'
           },
