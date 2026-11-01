@@ -113,7 +113,7 @@ export type ContentBlock =
   | { type: 'compare'; title?: string; beforeTitle: string; beforeCode: string; afterTitle: string; afterCode: string }
   | {
       type: 'image';
-      /** Path under public/lesson-images/ (e.g. "network/wireshark-dns.png") or a full https:// URL. */
+      /** Path under public/lesson-images/ (e.g. "network/wireshark-dns.webp") or a full https:// URL. */
       src: string;
       /** Descriptive alt text (required for accessibility). */
       alt: string;

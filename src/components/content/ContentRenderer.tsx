@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
+import { IMAGE_META } from '../../data/imageMeta';
 import {
   Info,
   Lightbulb,
@@ -129,6 +130,8 @@ export function SmartImage({
   const closeRef = useRef<HTMLButtonElement | null>(null);
 
   const url = /^https?:\/\//.test(src) ? src : import.meta.env.BASE_URL + basePath + src;
+  // intrinsic dimensions from the generated manifest reserve layout space while loading
+  const dims = IMAGE_META[src.split('/').pop() ?? ''];
 
   useEffect(() => {
     if (!zoom) return;
@@ -164,8 +167,9 @@ export function SmartImage({
               alt={alt}
               loading="lazy"
               decoding="async"
+              {...(dims ? { width: dims[0], height: dims[1] } : {})}
               onError={() => setFailed(true)}
-              className="mx-auto block max-h-[540px] w-auto max-w-full"
+              className="mx-auto block h-auto max-h-[540px] w-auto max-w-full"
             />
             <span className="pointer-events-none absolute right-2 top-2 flex items-center gap-1 rounded-md border border-line bg-base2/85 px-2 py-1 font-mono text-[10px] text-dim opacity-0 transition-opacity group-hover:opacity-100">
               <Maximize2 size={11} /> enlarge
@@ -230,9 +234,12 @@ export function SmartImage({
 }
 
 function ImageFigure({ block }: { block: ImageBlock }) {
+  // "tool:<file>" reuses a tool-image asset; everything else lives under lesson-images/
+  const isTool = block.src.startsWith('tool:');
   return (
     <SmartImage
-      src={block.src}
+      src={isTool ? block.src.slice(5) : block.src}
+      basePath={isTool ? 'tool-images/' : 'lesson-images/'}
       alt={block.alt}
       caption={block.caption}
       note={block.note}

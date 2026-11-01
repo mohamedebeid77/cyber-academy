@@ -362,7 +362,7 @@ export const m14: Module = {
             title: 'Capturing clean, attributable evidence',
             lines: [
               '$ mkdir -p evidence && adb shell screencap -p /sdcard/1405-order-1042.png',
-              '$ adb pull /sdcard/1405-order-1042.png evidence/2026-09-27-1405-order-1042.png',
+              '$ adb pull /sdcard/1405-order-1042.webp evidence/2026-09-27-1405-order-1042.webp',
               '$ adb logcat -d --pid=$(adb shell pidof com.example.app) > evidence/1405-logcat-raw.txt',
               '$ sed -E "s/eyJ[A-Za-z0-9_-]{20,}/[REDACTED-JWT]/g" evidence/1405-logcat-raw.txt > evidence/1405-logcat-clean.txt'
             ]

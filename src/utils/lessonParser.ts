@@ -34,7 +34,7 @@ adb devices
 
 diagram:android-architecture | Optional caption
 
-image:network/my-screenshot.png | Caption shown under the image | Optional note explaining what to notice`;
+image:network/my-screenshot.webp | Caption shown under the image | Optional note explaining what to notice`;
 
 export function parseLessonSource(src: string): { blocks: ContentBlock[]; errors: string[] } {
   const blocks: ContentBlock[] = [];
@@ -113,7 +113,7 @@ export function parseLessonSource(src: string): { blocks: ContentBlock[]; errors
       const [rawSrc, ...restParts] = rest.split('|');
       const src = rawSrc.trim();
       if (!src) {
-        errors.push('Image line needs a path: image:network/shot.png | caption');
+        errors.push('Image line needs a path: image:network/shot.webp | caption');
       } else {
         const caption = restParts[0]?.trim() || undefined;
         const note = restParts[1]?.trim() || undefined;

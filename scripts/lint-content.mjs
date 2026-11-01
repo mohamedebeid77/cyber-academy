@@ -82,8 +82,10 @@ function lintAcademy({ label, modulesDir, moduleFileRe, lessonIdRe, validDiagram
       else {
         const s = srcM[1];
         if (s.includes('..')) fail(`image src must not traverse directories: ${s}`);
-        if (!/^https?:\/\//.test(s) && !existsSync(join(ROOT, 'public', 'lesson-images', s)))
-          fail(`image asset missing: public/lesson-images/${s}`);
+        const isTool = s.startsWith('tool:');
+        const target = isTool ? join(ROOT, 'public', 'tool-images', s.slice(5)) : join(ROOT, 'public', 'lesson-images', s);
+        if (!/^https?:\/\//.test(s) && !isTool && !existsSync(target)) fail(`image asset missing: public/lesson-images/${s}`);
+        if (isTool && !existsSync(target)) fail(`tool image asset missing: public/tool-images/${s.slice(5)}`);
       }
       if (!altM || !altM[1].trim()) fail(`image block needs descriptive alt text (src: ${srcM?.[1] ?? '?'})`);
     }

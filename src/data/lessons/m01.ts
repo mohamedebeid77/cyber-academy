@@ -1322,7 +1322,7 @@ export const m01: Module = {
           },
           {
             type: 'image',
-            src: 'android/adb-gnome.png',
+            src: 'android/adb-gnome.webp',
             alt: 'GNOME Terminal showing an adb session: daemon start, device state transitions from unauthorized to device, and an adb shell uname -a',
             caption: 'A real adb session: daemon startup, authorization, then a shell on the device.',
             note: 'Match these lines to the health check above — the same verbs against a physical device instead of an emulator. The unauthorized-to-device transition is the RSA consent flow; aarch64 confirms an ARM64 device, which matters later when you pick Frida server binaries.',

@@ -80,7 +80,7 @@ export const n06: Module = {
           },
           {
             type: 'image',
-            src: 'network/wireshark-main.png',
+            src: 'network/wireshark-main.webp',
             alt: 'Wireshark 3.6 in dark theme during a live capture on interface wlan0, TLS traffic visible in the packet list',
             caption: 'Wireshark 3.6 mid-capture on a wireless interface — the three panes in a real session.',
             note: 'Match the panes to the table: the top list shows one row per packet with the Info column doing the summarizing; the middle tree and bottom hex view describe whichever row you select. The display-filter bar above the list is where you will type expressions like dns or tcp.flags.syn == 1 to narrow thousands of rows to the ones that matter.',
@@ -312,7 +312,7 @@ export const n06: Module = {
           },
           {
             type: 'image',
-            src: 'network/wireshark-handshake.png',
+            src: 'network/wireshark-handshake.webp',
             alt: 'Wireshark packet list showing a TCP three-way handshake: SYN, SYN+ACK, then ACK between client and server',
             caption: 'A real capture: the first three packets are the entire three-way handshake.',
             note: 'Read the Info column: packet 1 is the client SYN, packet 2 the server SYN+ACK, packet 3 the client ACK. Wireshark displays relative sequence numbers (0, 0, 1), which is exactly the byte-counting bookkeeping described above made visible on the wire.',
@@ -859,7 +859,7 @@ export const n06: Module = {
           },
           {
             type: 'image',
-            src: 'network/wireshark-dns-list.png',
+            src: 'network/wireshark-dns-list.webp',
             alt: 'Wireshark dark theme with display filter dns or icmp applied, showing DNS standard queries and responses in the packet list',
             caption: 'Real DNS traffic under the display filter dns or icmp.',
             note: 'Each pair is a query (Standard query … A example.com) followed by its response. Notice the pattern you will rely on everywhere: one request, one answer, small payloads, UDP 53. When you later see hundreds of unanswered queries or single hosts hammering unusual record types, you are looking at the anomalies described above.',
@@ -906,7 +906,7 @@ export const n06: Module = {
           },
           {
             type: 'image',
-            src: 'network/arp-request.png',
+            src: 'network/arp-request.webp',
             alt: 'Wireshark showing an ARP request broadcast with the Address Resolution Protocol detail tree expanded',
             caption: 'An ARP request on the wire: "Who has 192.168.168.7? Tell 192.168.168.101".',
             note: 'The detail tree shows the anatomy: an Ethernet II frame broadcast to ff:ff:ff:ff:ff:ff carrying a tiny ARP payload — operation 1 (request), sender IP and MAC, target IP known but target MAC all zeros. The reply inverts this: operation 2, sent unicast, both addresses filled in. Every L2 spoofing attack you will study later is just lying in these fields.',

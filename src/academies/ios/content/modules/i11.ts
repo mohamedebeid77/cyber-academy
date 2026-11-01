@@ -45,6 +45,14 @@ export const i11: Module = {
             id: 'ios-frida-arch',
             caption: 'Two paths onto the device: root daemon (jailbroken) or embedded gadget (re-signed IPA).'
           },
+          {
+            type: 'image',
+            src: 'tool:frida.webp',
+            alt: 'frida-trace instrumenting SSL methods in a running app and logging each call live',
+            caption: 'frida-trace: pattern-match methods, trace every call.',
+            note: 'The client side of the architecture diagram above: one pattern match instruments every SSL call the app makes, and each hit prints live with arguments and return value. The generated handler files are where lesson i11-l02 takes you next.',
+            credit: 'Terminal session rendered from official frida documentation examples'
+          },
           { type: 'h', text: 'The architecture' },
           {
             type: 'list',

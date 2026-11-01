@@ -308,7 +308,7 @@ export const m04: Module = {
           },
           {
             type: 'image',
-            src: 'android/jadx-gui.png',
+            src: 'android/jadx-gui.webp',
             alt: 'jadx-gui showing a decompiled APK: package tree on the left and decompiled Java source with highlighted intent flag lines on the right',
             caption: 'jadx-gui mid-analysis: decompiled Java from a real APK, searchable and cross-linked.',
             note: 'What you are looking at: the left tree is the decompiled package structure (obfuscated class names still visible), the editor shows the recovered Java with jadx\u2019s own highlighting, and the Code/Smali toggle at the bottom flips between Java and bytecode views. The highlighted lines show intent-flag manipulation — exactly the kind of line a pentester stops on and traces. Notice the Issues counter: decompilers never recover everything, and 1,364 warnings means most classes did decompile but some need the --show-bad-code fallback.',
@@ -506,6 +506,14 @@ export const m04: Module = {
           {
             type: 'h',
             text: 'The round trip'
+          },
+          {
+            type: 'image',
+            src: 'tool:apktool.webp',
+            alt: 'apktool decode session showing the decode log ending with Copied to decoded',
+            caption: 'apktool decoding an APK: manifest and resources become readable text, bytecode lands in smali/.',
+            note: 'The log lines are the map of what you get: AndroidManifest.xml decoded, file-resources extracted, classes.dex baksmali-ed into the smali/ tree. After an edit, apktool b rebuilds — the apksigner page covers the re-sign step that makes the patched APK installable.',
+            credit: 'Terminal session rendered from official apktool documentation examples'
           },
           {
             type: 'terminal',

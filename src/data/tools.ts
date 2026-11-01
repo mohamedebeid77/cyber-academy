@@ -6,7 +6,7 @@ import type { Tool } from '../types';
 export const tools: Tool[] = [
   {
     id: 'adb',
-    image: 'adb.png',
+    image: 'adb.webp',
 
     imageCredit: 'adb session in GNOME Terminal — PhotographyEdits via Wikimedia Commons (CC BY-SA 4.0)',
 
@@ -45,7 +45,7 @@ export const tools: Tool[] = [
   },
   {
     id: 'android-studio',
-    image: 'android-studio.png',
+    image: 'android-studio.webp',
 
     imageCredit: 'Android Studio Giraffe — Google LLC via Wikimedia Commons (CC BY 2.5)',
 
@@ -78,7 +78,7 @@ export const tools: Tool[] = [
   },
   {
     id: 'jadx',
-    image: 'jadx.png',
+    image: 'jadx.webp',
 
     imageCredit: 'jadx-gui decompiling an app — jadx project (Apache-2.0)',
 
@@ -111,6 +111,8 @@ export const tools: Tool[] = [
   },
   {
     id: 'apktool',
+    image: 'apktool.webp',
+    imageCredit: 'Terminal session rendered from official apktool (iBotPeaches) documentation examples',
     visual: 'terminal',
     name: 'apktool',
     category: 'CLI',
@@ -139,6 +141,8 @@ export const tools: Tool[] = [
   },
   {
     id: 'mobsf',
+    image: 'mobsf.webp',
+    imageCredit: 'MobSF dashboard — official project screenshot',
     visual: 'report',
     name: 'MobSF',
     category: 'Static/dynamic scanner',
@@ -166,6 +170,8 @@ export const tools: Tool[] = [
   },
   {
     id: 'frida',
+    image: 'frida.webp',
+    imageCredit: 'Terminal session rendered from official frida-trace (frida.re) documentation examples',
     visual: 'terminal',
     name: 'Frida',
     category: 'Instrumentation framework',
@@ -195,6 +201,8 @@ export const tools: Tool[] = [
   },
   {
     id: 'objection',
+    image: 'objection.webp',
+    imageCredit: 'Terminal session rendered from official objection (sensepost) documentation examples',
     visual: 'terminal',
     name: 'Objection',
     category: 'Runtime toolkit',
@@ -224,7 +232,7 @@ export const tools: Tool[] = [
   },
   {
     id: 'burp',
-    image: 'burp.png',
+    image: 'burp.webp',
 
     imageCredit: 'Burp Suite Pro: Proxy HTTP history — PortSwigger official documentation',
 
@@ -257,7 +265,7 @@ export const tools: Tool[] = [
   },
   {
     id: 'ghidra',
-    image: 'ghidra.png',
+    image: 'ghidra.webp',
 
     imageCredit: 'Ghidra CodeBrowser — Philipnelson99 via Wikimedia Commons (CC BY-SA 4.0)',
 
@@ -290,7 +298,7 @@ export const tools: Tool[] = [
   },
   {
     id: 'mitmproxy',
-    image: 'mitmproxy.png',
+    image: 'mitmproxy.webp',
 
     imageCredit: 'mitmproxy TUI — official screenshot, mitmproxy.org (GPL-3.0)',
 
@@ -322,6 +330,8 @@ export const tools: Tool[] = [
   },
   {
     id: 'drozer',
+    image: 'drozer.webp',
+    imageCredit: 'Terminal session rendered from official drozer (WithSecureLabs) documentation examples',
     visual: 'terminal',
     name: 'Drozer',
     category: 'IPC testing framework',
@@ -350,7 +360,7 @@ export const tools: Tool[] = [
   },
   {
     id: 'radare2',
-    image: 'radare2.png',
+    image: 'radare2.webp',
 
     imageCredit: 'radare2 web UI — pancake via Wikimedia Commons (LGPL)',
 
@@ -383,6 +393,8 @@ export const tools: Tool[] = [
   },
   {
     id: 'apksigner',
+    image: 'apksigner.webp',
+    imageCredit: 'Terminal session rendered from official apksigner (Android developer docs) documentation examples',
     visual: 'terminal',
     name: 'apksigner (build-tools)',
     category: 'CLI',

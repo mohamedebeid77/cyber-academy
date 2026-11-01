@@ -336,6 +336,14 @@ export const n07: Module = {
         technical: [
           { type: 'h', text: 'FTP — TCP 21 (control), 20 or passive ports (data)' },
           {
+            type: 'image',
+            src: 'tool:netcat.webp',
+            alt: 'netcat banner grab against an HTTP service showing the raw request and server response headers',
+            caption: 'netcat: the raw TCP pipe behind every banner grab.',
+            note: 'This is the technique the lesson keeps referencing: connect, send the smallest valid request, read whatever the service volunteers. Server headers, version strings and default pages all leak through this one-liner — the same grab nmap performs automatically during -sV.',
+            credit: 'Terminal session rendered from official netcat documentation examples'
+          },
+          {
             type: 'p',
             text:
               'FTP (RFC 959) uses a control connection on port 21 where commands and status codes travel, and a separate data connection for file transfers — active mode has the server connect back to the client from port 20, passive mode has the client connect to a server-chosen high port. That split matters in labs behind firewalls, where passive mode is usually the one that works. Enumeration questions: does the server allow anonymous login (username anonymous, any password, conventionally an email address)? Which directories are visible and which are writable? What banner and features (AUTH TLS for FTPS) appear on connect? The ftp-anon NSE script automates the anonymous check by actually logging in and listing the root directory:'
@@ -369,6 +377,22 @@ export const n07: Module = {
               'An anonymous login that works is a finding on its own; a writable directory makes it worse, because anyone can leave files there — which is both a data-exposure issue and a classic staging point for further attacks. Note the famous historical case for motivation: versusftpd 2.3.4 shipped with a backdoor (CVE-2011-2523) triggered on a specific login, which is why a 2.3.4 banner is treated as near-critical in the vulnerability module.'
           },
           { type: 'h', text: 'SSH — TCP 22' },
+          {
+            type: 'terminal',
+            title: 'Real SSH negotiation (ssh -vvv against github.com, captured on the author machine)',
+            lines: [
+              "$ ssh -vvv -o BatchMode=yes git@github.com",
+              "debug1: OpenSSH_10.2p1, OpenSSL 3.5.4 30 Sep 2025",
+              "debug1: Connecting to github.com [140.82.121.3] port 22.",
+              "debug1: Connection established.",
+              "debug1: Local version string SSH-2.0-OpenSSH_10.2",
+              "debug1: Remote protocol version 2.0, remote software version a09ebb4f",
+              "debug1: Authenticating to github.com:22 as 'git'",
+              "debug1: Authentications that can continue: publickey",
+              "# the server announced its software version and its allowed auth methods —",
+              "# exactly the enumeration facts this lesson teaches you to collect"
+            ]
+          },
           {
             type: 'p',
             text:

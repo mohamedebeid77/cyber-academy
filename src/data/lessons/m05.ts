@@ -719,6 +719,14 @@ export const m05: Module = {
             text: 'Setup: client, server, tunnel'
           },
           {
+            type: 'image',
+            src: 'tool:frida.webp',
+            alt: 'frida-trace instrumenting SSL methods in a running app and logging each call',
+            caption: 'frida-trace in action: matched methods get traced the moment the app calls them.',
+            note: 'The workflow the image shows: frida-trace matches a pattern against the app and loaded frameworks, generates a JavaScript handler per function, and logs every hit live. Editing those generated handlers is exactly where this module is heading.',
+            credit: 'Terminal session rendered from official frida documentation examples'
+          },
+          {
             type: 'terminal',
             title: 'Client install and frida-server on the emulator',
             lines: [
@@ -964,6 +972,14 @@ export const m05: Module = {
           {
             type: 'h',
             text: 'Two ways in'
+          },
+          {
+            type: 'image',
+            src: 'tool:objection.webp',
+            alt: 'objection explore session dumping keychain entries of a running iOS app',
+            caption: 'objection explore: one agent, keychain dump on demand.',
+            note: 'The image shows the iOS side of objection — the same explore session the lesson walks through on Android. Notice how the keychain dump turns the storage-attack theory of module m08 into a five-second command; the hooking below it is what objection automates.',
+            credit: 'Terminal session rendered from official objection documentation examples'
           },
           {
             type: 'list',

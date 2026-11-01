@@ -8,7 +8,7 @@ import type { Tool } from '../../../types';
 export const tools: Tool[] = [
   {
     id: 'nmap',
-    image: 'nmap.png',
+    image: 'nmap.webp',
 
     imageCredit: 'Screenshot: Mrshaxas via Wikimedia Commons (CC0)',
 
@@ -45,7 +45,7 @@ export const tools: Tool[] = [
   },
   {
     id: 'wireshark',
-    image: 'wireshark.png',
+    image: 'wireshark.webp',
 
     imageCredit: 'Wireshark 3.6 dark theme — VulcanSphere via Wikimedia Commons (GPL)',
 
@@ -81,6 +81,8 @@ export const tools: Tool[] = [
   },
   {
     id: 'tcpdump',
+    image: 'tcpdump.webp',
+    imageCredit: 'Terminal session rendered from official tcpdump man page documentation examples',
     visual: 'terminal',
     name: 'tcpdump',
     category: 'Packet Analysis',
@@ -111,6 +113,8 @@ export const tools: Tool[] = [
   },
   {
     id: 'netcat',
+    image: 'netcat.webp',
+    imageCredit: 'Terminal session rendered from official netcat/ncat (nmap.org) documentation examples',
     visual: 'terminal',
     name: 'Netcat (nc)',
     category: 'Networking',
@@ -142,6 +146,8 @@ export const tools: Tool[] = [
   },
   {
     id: 'socat',
+    image: 'socat.webp',
+    imageCredit: 'Terminal session rendered from official socat man page documentation examples',
     visual: 'terminal',
     name: 'Socat',
     category: 'Networking',
@@ -170,6 +176,8 @@ export const tools: Tool[] = [
   },
   {
     id: 'dig',
+    image: 'dig.webp',
+    imageCredit: 'Terminal session rendered from official dig (BIND9) documentation examples',
     visual: 'terminal',
     name: 'dig',
     category: 'Networking',
@@ -201,6 +209,8 @@ export const tools: Tool[] = [
   },
   {
     id: 'nslookup',
+    image: 'nslookup.webp',
+    imageCredit: 'Real output captured on the author machine (Windows nslookup)',
     visual: 'terminal',
     name: 'nslookup',
     category: 'Networking',
@@ -229,7 +239,7 @@ export const tools: Tool[] = [
   },
   {
     id: 'traceroute',
-    image: 'traceroute.png',
+    image: 'traceroute.webp',
 
     imageCredit: 'Windows tracert output — Michel Bakni via Wikimedia Commons (CC BY-SA 4.0)',
 
@@ -261,6 +271,8 @@ export const tools: Tool[] = [
   },
   {
     id: 'ping',
+    image: 'ping.webp',
+    imageCredit: 'Real output captured on the author machine (Windows ping)',
     visual: 'terminal',
     name: 'ping',
     category: 'Networking',
@@ -288,6 +300,8 @@ export const tools: Tool[] = [
   },
   {
     id: 'curl',
+    image: 'curl.webp',
+    imageCredit: 'Real output captured on the author machine (curl 8.16, Windows)',
     visual: 'terminal',
     name: 'curl',
     category: 'Web',
@@ -319,6 +333,8 @@ export const tools: Tool[] = [
   },
   {
     id: 'wget',
+    image: 'wget.webp',
+    imageCredit: 'Terminal session rendered from official wget (GNU) documentation examples',
     visual: 'terminal',
     name: 'wget',
     category: 'Web',
@@ -347,6 +363,8 @@ export const tools: Tool[] = [
   },
   {
     id: 'netdiscover',
+    image: 'netdiscover.webp',
+    imageCredit: 'Terminal session rendered from official netdiscover documentation examples',
     visual: 'scan',
     name: 'netdiscover',
     category: 'Scanning',
@@ -374,6 +392,8 @@ export const tools: Tool[] = [
   },
   {
     id: 'arp-scan',
+    image: 'arp-scan.webp',
+    imageCredit: 'Real output captured on the author machine (Windows arp -a)',
     visual: 'scan',
     name: 'arp-scan',
     category: 'Scanning',
@@ -401,6 +421,8 @@ export const tools: Tool[] = [
   },
   {
     id: 'enum4linux',
+    image: 'enum4linux.webp',
+    imageCredit: 'Terminal session rendered from official enum4linux (CiscoCXSecurity) documentation examples',
     visual: 'terminal',
     name: 'enum4linux',
     category: 'Enumeration',
@@ -430,6 +452,8 @@ export const tools: Tool[] = [
   },
   {
     id: 'smbclient',
+    image: 'smbclient.webp',
+    imageCredit: 'Terminal session rendered from official smbclient (Samba) documentation examples',
     visual: 'terminal',
     name: 'smbclient',
     category: 'Enumeration',
@@ -458,6 +482,8 @@ export const tools: Tool[] = [
   },
   {
     id: 'ldapsearch',
+    image: 'ldapsearch.webp',
+    imageCredit: 'Terminal session rendered from official ldapsearch (OpenLDAP) documentation examples',
     visual: 'terminal',
     name: 'ldapsearch',
     category: 'Enumeration',
@@ -487,6 +513,8 @@ export const tools: Tool[] = [
   },
   {
     id: 'responder',
+    image: 'responder.webp',
+    imageCredit: 'Terminal session rendered from official Responder (SpiderLabs) documentation examples',
     visual: 'terminal',
     name: 'Responder',
     category: 'Exploitation Support',
@@ -514,6 +542,8 @@ export const tools: Tool[] = [
   },
   {
     id: 'chisel',
+    image: 'chisel.webp',
+    imageCredit: 'Terminal session rendered from official chisel (jpillora) documentation examples',
     visual: 'tunnel',
     name: 'Chisel',
     category: 'Tunneling',
@@ -541,7 +571,7 @@ export const tools: Tool[] = [
   },
   {
     id: 'ligolo-ng',
-    image: 'ligolo-ng.png',
+    image: 'ligolo-ng.webp',
 
     imageCredit: 'ligolo-ng web UI — official repo (GPL-3.0)',
 
@@ -574,6 +604,8 @@ export const tools: Tool[] = [
   },
   {
     id: 'proxychains',
+    image: 'proxychains.webp',
+    imageCredit: 'Terminal session rendered from official proxychains-ng documentation examples',
     visual: 'tunnel',
     name: 'Proxychains',
     category: 'Tunneling',
@@ -601,6 +633,8 @@ export const tools: Tool[] = [
   },
   {
     id: 'searchsploit',
+    image: 'searchsploit.webp',
+    imageCredit: 'Terminal session rendered from official searchsploit (Exploit-DB) documentation examples',
     visual: 'terminal',
     name: 'Searchsploit',
     category: 'Exploitation Support',

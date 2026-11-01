@@ -329,6 +329,14 @@ export const n08: Module = {
             id: 'net-vuln-workflow',
             caption: 'The vulnerability scanning workflow: scoping, discovery, service detection, checks, then validation and reporting.'
           },
+          {
+            type: 'image',
+            src: 'tool:searchsploit.webp',
+            alt: 'searchsploit querying the local Exploit-DB copy for vsftpd exploits and mirroring one with -m',
+            caption: 'searchsploit: the exploit database, searchable offline.',
+            note: 'The bridge from scanning to validation: once a version is fingerprinted, searchsploit maps it to public exploit code. The -m mirror step matters — read the exploit before running anything, and only against the lab targets this module authorizes.',
+            credit: 'Terminal session rendered from official searchsploit documentation examples'
+          },
           { type: 'h', text: 'The scanner pipeline' },
           {
             type: 'p',

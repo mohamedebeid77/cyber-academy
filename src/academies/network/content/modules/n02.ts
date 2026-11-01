@@ -768,7 +768,7 @@ export const n02: Module = {
           },
           {
             type: 'image',
-            src: 'network/wireshark-dns-detail.png',
+            src: 'network/wireshark-dns-detail.webp',
             alt: 'Wireshark packet detail pane fully expanded on a DNS query, showing frame, Ethernet II, IP, UDP and Domain Name System layers',
             caption: 'One DNS query, decoded layer by layer in the detail pane.',
             note: 'This is encapsulation made visible: Ethernet II (L2) carries IPv4 (L3), which carries UDP (L4), which carries the DNS query (application layer). Expanding each node in this tree is how you verify every field described in this lesson — ports 53 live in the UDP node, the queried name and record type in the DNS node.',
@@ -777,7 +777,7 @@ export const n02: Module = {
           },
           {
             type: 'image',
-            src: 'network/dns-ttl-detail.png',
+            src: 'network/dns-ttl-detail.webp',
             alt: 'Wireshark showing the TTL field of a DNS answer for www.google.com highlighted in the packet detail pane',
             caption: 'The TTL field inside a real DNS answer for www.google.com.',
             note: 'Notice this is the record\u2019s Time to Live — how many seconds a resolver may cache this answer — which is different from the IP header TTL that limits hop count. Record TTLs matter to testers twice: short TTLs signal failover or CDN infrastructure during recon, and attackers abuse long TTLs to keep poisoned cache entries alive.',
@@ -1039,6 +1039,25 @@ export const n02: Module = {
             type: 'p',
             text:
               'HTTP/HTTPS: request-response with methods and status codes; TLS wraps HTTP into HTTPS with a handshake that negotiates version and ciphers and presents a certificate — the SNI field carries the hostname in plaintext, which is why name-based hosting and name-harvesting both work. SSH: the encrypted replacement for telnet/rlogin; authenticates with passwords or public keys; banners like SSH-2.0-OpenSSH_8.9p1 announce exact versions; its tunneling and dynamic forwarding features are later pivot tools. FTP: a two-channel design (control on 21, data on 20 or negotiated passive ports) with everything in the clear; anonymous FTP is the classic misconfiguration. SMTP: servers exchange mail with HELO/EHLO, MAIL FROM and RCPT TO; 25 is server-to-server, 587 submission with authentication, 465 implicit TLS; VRFY/EXPN and RCPT probing enable user enumeration, and relay tests check whether the server sends mail for anyone.'
+          },
+          {
+            type: 'terminal',
+            title: 'A real TLS 1.3 handshake (openssl s_client -brief, captured on the author machine)',
+            lines: [
+              "$ openssl s_client -connect example.com:443 -brief",
+              "Connecting to 104.20.23.154",
+              "CONNECTION ESTABLISHED",
+              "Protocol version: TLSv1.3",
+              "Ciphersuite: TLS_AES_256_GCM_SHA384",
+              "Peer certificate: CN=example.com",
+              "Hash used: SHA256",
+              "Signature type: ecdsa_secp256r1_sha256",
+              "Verification: OK",
+              "Negotiated TLS1.3 group: X25519MLKEM768",
+              "DONE",
+              "# version, ciphersuite, certificate name and verification result — the four",
+              "# facts that decide whether traffic to this host is testable or protected"
+            ]
           },
           {
             type: 'p',

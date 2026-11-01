@@ -40,7 +40,7 @@ export const i07: Module = {
         technical: [
           {
             type: 'image',
-            src: 'ios/xcode-26.png',
+            src: 'ios/xcode-26.webp',
             alt: 'Xcode 26 with an iOS app project open: project navigator, Swift source editor and build succeeded banner',
             caption: 'Xcode with a real iOS app project — the anchor of the macOS workbench.',
             note: 'What matters for testing, not development: the project navigator (left) exposes every file the app ships — Info.plist, entitlements, assets; the editor is where source-level review of Swift/ObjC happens; the toolbar shows the active scheme and destination (a simulator or a physical device), which drives every xcrun/devicectl command in the terminal blocks below. The Build Succeeded banner is the end state of the code-signing machinery covered in module i06.',
@@ -549,7 +549,7 @@ export const i07: Module = {
           },
           {
             type: 'image',
-            src: 'shared/mitmproxy-cli.png',
+            src: 'shared/mitmproxy-cli.webp',
             alt: 'mitmproxy terminal UI showing a flows list: intercepted HTTPS requests with methods, URLs, status codes, sizes and timings',
             caption: 'mitmproxy\u2019s TUI: every intercepted flow, live.',
             note: 'The alternative proxy, shown here doing exactly what the lesson describes: one row per flow with method, URL, response code, size and timing. Navigation is keyboard-first (up/down to select, Enter to inspect a flow, q to return) — the flows list you see maps one-to-one to Burp\u2019s HTTP history, and either tool satisfies the baseline-capture workflow above. The [*:9999] indicator bottom-right shows the listening port.',

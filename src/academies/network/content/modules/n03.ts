@@ -409,7 +409,7 @@ export const n03: Module = {
           },
           {
             type: 'image',
-            src: 'network/tracert-windows.png',
+            src: 'network/tracert-windows.webp',
             alt: 'Windows Command Prompt showing the output of tracert www.google.com with a list of hops and round-trip times',
             caption: 'Windows tracert mapping the path to www.google.com.',
             note: 'The three columns per hop are three probe attempts — variation between them is normal jitter, and a hop showing all stars simply did not answer (its forwarding can still be perfectly healthy, as the later hops proving). Notice the private-address first hop: the home gateway, exactly where every trace begins.',

@@ -814,7 +814,7 @@ export const n05: Module = {
           },
           {
             type: 'image',
-            src: 'network/nmap-scan.png',
+            src: 'network/nmap-scan.webp',
             alt: 'nmap scan output in a dark terminal showing open ports 22 and 80 on scanme.nmap.org with service and version details',
             caption: 'A real nmap result against scanme.nmap.org — the Nmap project\u2019s official practice target.',
             note: 'The PORT table is the deliverable: state (open, filtered), the service name per port, and — when -sV ran — the product and version behind it. Every row here is a candidate finding: an exposed SSH version and a web server are exactly the leads that turn a scan into a targeted assessment.',

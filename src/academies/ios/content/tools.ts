@@ -7,7 +7,7 @@ import type { Tool } from '../../../types';
 export const tools: Tool[] = [
   {
     id: 'xcode',
-    image: 'xcode.png',
+    image: 'xcode.webp',
 
     imageCredit: 'Xcode 26 with an iOS project — Wittawin Panta via Wikimedia Commons (CC BY-SA 4.0)',
 
@@ -36,6 +36,8 @@ export const tools: Tool[] = [
   },
   {
     id: 'xcrun-devicectl',
+    image: 'xcrun-devicectl.webp',
+    imageCredit: 'devicectl session rendered from Apple documentation usage',
     visual: 'device',
     name: 'xcrun (simctl / devicectl)',
     category: 'Apple toolchain',
@@ -63,6 +65,8 @@ export const tools: Tool[] = [
   },
   {
     id: 'pymobiledevice3',
+    image: 'pymobiledevice3.webp',
+    imageCredit: 'Terminal session rendered from official pymobiledevice3 (doronz88) documentation examples',
     visual: 'device',
     name: 'pymobiledevice3',
     category: 'Device communication',
@@ -89,6 +93,8 @@ export const tools: Tool[] = [
   },
   {
     id: 'libimobiledevice',
+    image: 'libimobiledevice.webp',
+    imageCredit: 'Terminal session rendered from official libimobiledevice documentation examples',
     visual: 'device',
     name: 'libimobiledevice (idevice tools)',
     category: 'Device communication',
@@ -114,6 +120,8 @@ export const tools: Tool[] = [
   },
   {
     id: 'frida',
+    image: 'frida.webp',
+    imageCredit: 'Terminal session rendered from official frida-trace (frida.re) documentation examples',
     visual: 'terminal',
     name: 'Frida',
     category: 'Runtime instrumentation',
@@ -142,6 +150,8 @@ export const tools: Tool[] = [
   },
   {
     id: 'objection',
+    image: 'objection.webp',
+    imageCredit: 'Terminal session rendered from official objection (sensepost) documentation examples',
     visual: 'terminal',
     name: 'objection',
     category: 'Runtime instrumentation',
@@ -168,7 +178,7 @@ export const tools: Tool[] = [
   },
   {
     id: 'burp',
-    image: 'burp.png',
+    image: 'burp.webp',
 
     imageCredit: 'Burp Suite Pro: Proxy HTTP history — PortSwigger official documentation',
 
@@ -198,7 +208,7 @@ export const tools: Tool[] = [
   },
   {
     id: 'mitmproxy',
-    image: 'mitmproxy.png',
+    image: 'mitmproxy.webp',
 
     imageCredit: 'mitmproxy TUI — official screenshot, mitmproxy.org (GPL-3.0)',
 
@@ -227,7 +237,7 @@ export const tools: Tool[] = [
   },
   {
     id: 'ghidra',
-    image: 'ghidra.png',
+    image: 'ghidra.webp',
 
     imageCredit: 'Ghidra CodeBrowser — Philipnelson99 via Wikimedia Commons (CC BY-SA 4.0)',
 
@@ -257,6 +267,8 @@ export const tools: Tool[] = [
   },
   {
     id: 'hopper',
+    image: 'hopper.webp',
+    imageCredit: 'Terminal session rendered from official Hopper Disassembler documentation examples',
     visual: 'disassembler',
     name: 'Hopper Disassembler',
     category: 'Reverse engineering',
@@ -280,6 +292,8 @@ export const tools: Tool[] = [
   },
   {
     id: 'lldb',
+    image: 'lldb.webp',
+    imageCredit: 'Terminal session rendered from official LLDB (llvm.org) documentation examples',
     visual: 'debugger',
     name: 'LLDB',
     category: 'Debugging',
@@ -307,6 +321,8 @@ export const tools: Tool[] = [
   },
   {
     id: 'codesign',
+    image: 'codesign.webp',
+    imageCredit: 'codesign session rendered from Apple documentation usage',
     visual: 'terminal',
     name: 'codesign',
     category: 'Signing / inspection',
@@ -331,6 +347,8 @@ export const tools: Tool[] = [
   },
   {
     id: 'ldid',
+    image: 'ldid.webp',
+    imageCredit: 'Terminal session rendered from official ldid (ProcursusTeam) documentation examples',
     visual: 'terminal',
     name: 'ldid',
     category: 'Signing / inspection',
@@ -354,6 +372,8 @@ export const tools: Tool[] = [
   },
   {
     id: 'otool-nm-strings',
+    image: 'otool-nm-strings.webp',
+    imageCredit: 'otool/nm/strings session rendered from Apple documentation usage',
     visual: 'terminal',
     name: 'otool / nm / strings',
     category: 'Binary inspection',
@@ -382,6 +402,8 @@ export const tools: Tool[] = [
   },
   {
     id: 'plutil',
+    image: 'plutil.webp',
+    imageCredit: 'plutil session rendered from Apple documentation usage',
     visual: 'terminal',
     name: 'plutil',
     category: 'Property lists',
@@ -405,6 +427,8 @@ export const tools: Tool[] = [
   },
   {
     id: 'class-dump-tools',
+    image: 'class-dump-tools.webp',
+    imageCredit: 'Terminal session rendered from official class-dump documentation examples',
     visual: 'terminal',
     name: 'class-dump family (dsdump)',
     category: 'Binary inspection',
@@ -427,6 +451,8 @@ export const tools: Tool[] = [
   },
   {
     id: 'rizin',
+    image: 'rizin.webp',
+    imageCredit: 'Terminal session rendered from official rizin documentation examples',
     visual: 'disassembler',
     name: 'rizin / radare2',
     category: 'Reverse engineering',
